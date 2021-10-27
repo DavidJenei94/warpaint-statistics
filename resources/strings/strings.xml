@@ -2,15 +2,170 @@
 
     <string id="AppName">Warpaint Statistics</string>
 
-    <string id="BackgroundColorTitle">Background Color</string>
-    <string id="ForegroundColorTitle">Foreground Color</string>
-    <string id="MilitaryFormatTitle">Military Format for 24 Hour Time</string>
+	<string id="ThemeTitle">Theme</string>
 
-    <string id="ColorBlack">Black</string>
-    <string id="ColorDarkGray">Dark Gray</string>
-    <string id="ColorLightGray">Light Gray</string>
-    <string id="ColorWhite">White</string>
-    <string id="ColorBlue">Blue</string>
-    <string id="ColorRed">Red</string>
+    <!-- Basic color themes -->
+    <string id="ClassDark">Class (Dark)</string>
+    <string id="ClassLight">Class (Light)</string>
+    <string id="ClassDarkColorful">Class (Dark - Colorful)</string>
+    <string id="ClassLightColorful">Class (Light - Colorful)</string>
+    <string id="ConquestDark">Conquest (Dark)</string>
+    <string id="ConquestLight">Conquest (Light)</string>
+    <string id="Conquest">Conquest</string>
+    <string id="EssenceDark">Essence (Dark)</string>
+    <string id="EssenceLight">Essence (Light)</string>
+    <string id="Essence">Essence</string>
+    <string id="PassionDark">Passion (Dark)</string>
+    <string id="PassionLight">Passion (Light)</string>
+    <string id="Passion">Passion</string>
+    <string id="LibertyDark">Liberty (Dark)</string>
+    <string id="LibertyLight">Liberty (Light)</string>
+    <string id="Liberty">Liberty</string>
+    <string id="PrincessDark">Princess (Dark)</string>
+    <string id="PrincessLight">Princess (Light)</string>
+    <string id="Princess">Princess</string>
+    <string id="RuleDark">Rule (Dark)</string>
+    <string id="RuleLight">Rule (Light)</string>
+    <string id="Rule">Rule</string>
+    <string id="SensationDark">Sensation (Dark)</string>
+    <string id="SensationLight">Sensation (Light)</string>
+    <string id="Sensation">Sensation</string>
+    <string id="FreezingDark">Freezing (Dark)</string>
+    <string id="FreezingLight">Freezing (Light)</string>
+    <string id="Freezing">Freezing</string>
+    <!-- Extra themes 1 (45) -->    
+    <string id="BloomingDark">Blooming (Dark)</string>
+    <string id="BloomingLight">Blooming (Light)</string>
+    <string id="Blooming">Blooming</string>
+    <string id="ElegantLight">Elegant (Light)</string>
+    <string id="Elegant">Elegant</string>
+    <string id="BubblegumDark">Bubblegum (Dark)</string>
+    <string id="BubblegumLight">Bubblegum (Light)</string>
+    <string id="Bubblegum">Bubblegum</string>
+    <string id="SavageDark">Savage (Dark)</string>
+    <string id="SavageLight">Savage (Light)</string>
+    <string id="TrustDark">Trust (Dark)</string>
+    <string id="TrustLight">Trust (Light)</string>
+    <string id="Trust">Trust</string>
+    <string id="ImaginationDark">Imagination (Dark)</string>
+    <string id="Imagination">Imagination</string>
+    <string id="NatureDark">Nature (Dark)</string>
+    <string id="NatureLight">Nature (Light)</string>
+    <string id="Nature">Nature</string>
+    <string id="LustDark">Lust (Dark)</string>
+    <string id="LustLight">Lust (Light)</string>
+    <string id="Lust">Lust</string>
+    <string id="SweetDark">Sweet (Dark)</string>
+    <string id="SweetLight">Sweet (Light)</string>
+    <string id="Sweet">Sweet</string>
+    <string id="MoonlightDark">Moonlight (Dark)</string>
+    <string id="Moonlight">Moonlight</string>
+    <string id="LuxuryDark">Luxury (Dark)</string>
+    <string id="Luxury">Luxury</string>
+    <string id="CaptivatingDark">Captivating (Dark)</string>
+    <string id="Captivating">Captivating</string>
+    <string id="ChristmasDark">Christmas (Dark)</string>
+    <string id="ChristmasLight">Christmas (Light)</string>
+    <string id="Christmas">Christmas</string>
+    <string id="CheerfulDark">Cheerful (Dark)</string>
+    <string id="CheerfulLight">Cheerful (Light)</string>
+    <string id="Cheerful">Cheerful</string>
+    <string id="RaptureDark">Rapture (Dark)</string>
+    <string id="RaptureLight">Rapture (Light)</string>
+    <string id="Rapture">Rapture</string>
+    <string id="WildernessDark">Wilderness (Dark)</string>
+    <string id="WildernessLight">Wilderness (Light)</string>
+    <string id="Wilderness">Wilderness</string>
+    <string id="NebulaDark">Nebula (Dark)</string>
+    <string id="NebulaLight">Nebula (Light)</string>
+    <string id="Nebula">Nebula</string>
+    <!-- Extra themes 2 (43) -->
+    <string id="CopperDark">Copper (Dark)</string>
+    <string id="CopperLight">Copper (Light)</string>
+    <string id="Copper">Copper</string>
+    <string id="BreezeDark">Breeze (Dark)</string>
+    <string id="BreezeLight">Breeze (Light)</string>
+    <string id="Breeze">Breeze</string>
+    <string id="AdventureDark">Adventure (Dark)</string>
+    <string id="AdventureLight">Adventure (Light)</string>
+    <string id="InspirationDark">Inspiration (Dark)</string>
+    <string id="Inspiration">Inspiration</string>
+    <string id="IlluminationDark">Illumination (Dark)</string>
+    <string id="Illumination">Illumination</string>
+    <string id="CoastDark">Coast (Dark)</string>
+    <string id="CoastLight">Coast (Light)</string>
+    <string id="Coast">Coast</string>
+    <string id="FreedomDark">Freedom (Dark)</string>
+    <string id="FreedomLight">Freedom (Light)</string>
+    <string id="Freedom">Freedom</string>
+    <string id="GraceDark">Grace (Dark)</string>
+    <string id="GraceLight">Grace (Light)</string>
+    <string id="Grace">Grace</string>
+    <string id="ExuberanceDark">Exuberance (Dark)</string>
+    <string id="ExuberanceLight">Exuberance (Light)</string>
+    <string id="Exuberance">Exuberance</string>
+    <string id="VitalityDark">Vitality (Dark)</string>
+    <string id="VitalityLight">Vitality (Light)</string>
+    <string id="Vitality">Vitality</string>
+    <string id="CozyDark">Cozy (Dark)</string>
+    <string id="CozyLight">Cozy (Light)</string>
+    <string id="VerdantDark">Verdant (Dark)</string>
+    <string id="Verdant">Verdant</string>
+    <string id="ExcitementDark">Excitement (Dark)</string>
+    <string id="Excitement">Excitement</string>
+    <string id="StimulationDark">Stimulation (Dark)</string>
+    <string id="StimulationLight">Stimulation (Light)</string>
+    <string id="Stimulation">Stimulation</string>
+    <string id="BlazingDark">Blazing (Dark)</string>
+    <string id="Blazing">Blazing</string>
+    <string id="AliveDark">Alive (Dark)</string>
+    <string id="Alive">Alive</string>
+    <string id="TropicalDark">Tropical (Dark)</string>
+    <string id="TropicalLight">Tropical (Light)</string>
+    <string id="Tropical">Tropical</string>
+
+
+    <string id="DisplaySecondTitle">Show Seconds options</string>
+    <string id="DisplaySecondOff">Do not show seconds</string>
+    <string id="DisplaySecondActive">Show seconds when watch is active</string>
+    <string id="DisplaySecondAlways">Always show seconds (drains the battery faster)</string>
+
+    <string id="CaloriesGoalTitle">Burned Calories Goal for the day (kCal)</string>
+	<string id="CaloriesGoalPrompt">Valid value between 0 and 10000. 0 will trigger automatic average calculation</string>
+	<string id="CaloriesGoalError">Values accepted only between 0 and 10000</string>
+
+    <string id="DataField1Title">Data Field 1</string>
+    <string id="DataField2Title">Data Field 2</string>
+    <string id="DataField3Title">Data Field 3</string>
+
+    <string id="RemainingTimeToDateTitle">Select the date to calculate the remaining days</string>
+    <string id="RemainingTimeToDatePrompt">Only works with the 'Remaining days to selected date' data field</string>
+    <string id="RemainingTimeToDateError">Date between 10.10.2021 and 01.01.2038</string>
+
+    <string id="DataBarOuterLeftTopTitle">Outer DataBar</string>
+    <string id="DataBarInnerRightBottomTitle">Inner DataBar</string>
+
+    <string id="Battery">Battery</string>
+    <string id="Steps">Steps</string>
+	<string id="HeartRate">Heart Rate (current if available, otherwise resting)</string>
+	<string id="Calories">Calories (kCal)</string>
+	<string id="NextSunriseSunset">Next Sunrise or Sunset</string>
+	<string id="Distance">Distance</string>
+	<string id="FloorsClimbed">Floors Climbed</string>
+	<string id="ActiveMinutesWeek">Active minutes of the week</string>
+	<string id="Weather">Current Weather</string>
+	<string id="SystemIndicators">System Indicators (notifications, alarms, DND, bluetooth)</string>
+	<string id="MoveBar">Move Bar</string>
+	<string id="RemainingTime">Remaining days to selected date</string>
+	<string id="MetersClimbed">Meters Climbed</string>
+	<string id="Off">Off</string>
+
+    <string id="SunriseSunsetDrawingTitle">Sunrise and Sunset around watchface</string>
+
+    <string id="DataBarSplitTitle">Split databars</string>
+    <string id="DataBarSplitOff">Do not split</string>
+    <string id="DataBarSplitOuterLeftTop">Outer databar</string>
+    <string id="DataBarSplitInnerRightBottom">Inner databar</string>
+    <string id="DataBarSplitAll">Both</string>
 
 </strings>

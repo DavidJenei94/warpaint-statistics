@@ -1,25 +1,235 @@
 <settings>
 
-    <setting propertyKey="@Properties.BackgroundColor" title="@Strings.BackgroundColorTitle">
+
+	<setting propertyKey="@Properties.Theme" title="@Strings.ThemeTitle">
         <settingConfig type="list">
-            <listEntry value="0x000000">@Strings.ColorBlack</listEntry>
-            <listEntry value="0x555555">@Strings.ColorDarkGray</listEntry>
-            <listEntry value="0xAAAAAA">@Strings.ColorLightGray</listEntry>
-            <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>
+			<!-- Basic themes (28) -->
+            <listEntry value="0">@Strings.ClassDark</listEntry>
+            <listEntry value="1">@Strings.ClassLight</listEntry>
+            <listEntry value="3">@Strings.ClassDarkColorful</listEntry>
+            <listEntry value="4">@Strings.ClassLightColorful</listEntry>
+			<listEntry value="5">@Strings.ConquestDark</listEntry>
+            <listEntry value="6">@Strings.ConquestLight</listEntry>
+            <listEntry value="7">@Strings.Conquest</listEntry>
+			<listEntry value="10">@Strings.EssenceDark</listEntry>
+            <listEntry value="11">@Strings.EssenceLight</listEntry>
+            <listEntry value="12">@Strings.Essence</listEntry>
+			<listEntry value="15">@Strings.PassionDark</listEntry>
+            <listEntry value="16">@Strings.PassionLight</listEntry>
+            <listEntry value="17">@Strings.Passion</listEntry>
+			<listEntry value="20">@Strings.LibertyDark</listEntry>
+            <listEntry value="21">@Strings.LibertyLight</listEntry>
+            <listEntry value="22">@Strings.Liberty</listEntry>
+			<listEntry value="25">@Strings.PrincessDark</listEntry>
+            <listEntry value="26">@Strings.PrincessLight</listEntry>
+            <listEntry value="27">@Strings.Princess</listEntry>
+			<listEntry value="30">@Strings.RuleDark</listEntry>
+            <listEntry value="31">@Strings.RuleLight</listEntry>
+            <listEntry value="32">@Strings.Rule</listEntry>
+			<listEntry value="35">@Strings.SensationDark</listEntry>
+            <listEntry value="36">@Strings.SensationLight</listEntry>
+            <listEntry value="37">@Strings.Sensation</listEntry>
+			<listEntry value="40">@Strings.FreezingDark</listEntry>
+            <listEntry value="41">@Strings.FreezingLight</listEntry>
+            <listEntry value="42">@Strings.Freezing</listEntry>
+			<!-- Extra themes 1 (45) -->
+			<listEntry value="50">@Strings.BloomingDark</listEntry>
+            <listEntry value="51">@Strings.BloomingLight</listEntry>
+            <listEntry value="52">@Strings.Blooming</listEntry>
+            <listEntry value="56">@Strings.ElegantLight</listEntry>
+            <listEntry value="57">@Strings.Elegant</listEntry>
+			<listEntry value="60">@Strings.BubblegumDark</listEntry>
+            <listEntry value="61">@Strings.BubblegumLight</listEntry>
+            <listEntry value="62">@Strings.Bubblegum</listEntry>
+			<listEntry value="65">@Strings.SavageDark</listEntry>
+            <listEntry value="66">@Strings.SavageLight</listEntry>
+			<listEntry value="70">@Strings.TrustDark</listEntry>
+            <listEntry value="71">@Strings.TrustLight</listEntry>
+            <listEntry value="72">@Strings.Trust</listEntry>
+			<listEntry value="75">@Strings.ImaginationDark</listEntry>
+            <listEntry value="77">@Strings.Imagination</listEntry>
+			<listEntry value="80">@Strings.NatureDark</listEntry>
+            <listEntry value="81">@Strings.NatureLight</listEntry>
+            <listEntry value="82">@Strings.Nature</listEntry>
+			<listEntry value="85">@Strings.LustDark</listEntry>
+            <listEntry value="86">@Strings.LustLight</listEntry>
+            <listEntry value="87">@Strings.Lust</listEntry>
+			<listEntry value="90">@Strings.SweetDark</listEntry>
+            <listEntry value="91">@Strings.SweetLight</listEntry>
+            <listEntry value="92">@Strings.Sweet</listEntry>
+			<listEntry value="95">@Strings.MoonlightDark</listEntry>
+            <listEntry value="97">@Strings.Moonlight</listEntry>
+			<listEntry value="100">@Strings.LuxuryDark</listEntry>
+            <listEntry value="102">@Strings.Luxury</listEntry>
+			<listEntry value="105">@Strings.CaptivatingDark</listEntry>
+            <listEntry value="107">@Strings.Captivating</listEntry>
+			<listEntry value="110">@Strings.ChristmasDark</listEntry>
+            <listEntry value="111">@Strings.ChristmasLight</listEntry>
+            <listEntry value="112">@Strings.Christmas</listEntry>
+			<listEntry value="115">@Strings.CheerfulDark</listEntry>
+            <listEntry value="116">@Strings.CheerfulLight</listEntry>
+            <listEntry value="117">@Strings.Cheerful</listEntry>
+			<listEntry value="120">@Strings.RaptureDark</listEntry>
+            <listEntry value="121">@Strings.RaptureLight</listEntry>
+            <listEntry value="122">@Strings.Rapture</listEntry>
+			<listEntry value="125">@Strings.WildernessDark</listEntry>
+            <listEntry value="126">@Strings.WildernessLight</listEntry>
+            <listEntry value="127">@Strings.Wilderness</listEntry>
+			<listEntry value="130">@Strings.NebulaDark</listEntry>
+            <listEntry value="131">@Strings.NebulaLight</listEntry>
+            <listEntry value="132">@Strings.Nebula</listEntry>
+			<!-- Extra themes 2 (43) -->
+			<listEntry value="200">@Strings.CopperDark</listEntry>
+			<listEntry value="201">@Strings.CopperLight</listEntry>
+            <listEntry value="202">@Strings.Copper</listEntry>
+			<listEntry value="205">@Strings.BreezeDark</listEntry>
+			<listEntry value="206">@Strings.BreezeLight</listEntry>
+            <listEntry value="207">@Strings.Breeze</listEntry>
+			<listEntry value="210">@Strings.AdventureDark</listEntry>
+            <listEntry value="211">@Strings.AdventureLight</listEntry>
+			<listEntry value="215">@Strings.InspirationDark</listEntry>
+            <listEntry value="217">@Strings.Inspiration</listEntry>
+			<listEntry value="220">@Strings.IlluminationDark</listEntry>
+            <listEntry value="222">@Strings.Illumination</listEntry>
+			<listEntry value="225">@Strings.CoastDark</listEntry>
+            <listEntry value="226">@Strings.CoastLight</listEntry>
+            <listEntry value="227">@Strings.Coast</listEntry>
+			<listEntry value="230">@Strings.FreedomDark</listEntry>
+            <listEntry value="231">@Strings.FreedomLight</listEntry>
+            <listEntry value="232">@Strings.Freedom</listEntry>
+            <listEntry value="235">@Strings.GraceDark</listEntry>
+            <listEntry value="236">@Strings.GraceLight</listEntry>
+            <listEntry value="237">@Strings.Grace</listEntry>
+            <listEntry value="240">@Strings.ExuberanceDark</listEntry>
+            <listEntry value="241">@Strings.ExuberanceLight</listEntry>
+            <listEntry value="242">@Strings.Exuberance</listEntry>
+			<listEntry value="245">@Strings.VitalityDark</listEntry>
+            <listEntry value="246">@Strings.VitalityLight</listEntry>
+            <listEntry value="247">@Strings.Vitality</listEntry>
+			<listEntry value="250">@Strings.CozyDark</listEntry>
+            <listEntry value="251">@Strings.CozyLight</listEntry>
+			<listEntry value="255">@Strings.VerdantDark</listEntry>
+            <listEntry value="257">@Strings.Verdant</listEntry>
+			<listEntry value="260">@Strings.ExcitementDark</listEntry>
+            <listEntry value="262">@Strings.Excitement</listEntry>
+			<listEntry value="265">@Strings.StimulationDark</listEntry>
+            <listEntry value="266">@Strings.StimulationLight</listEntry>
+            <listEntry value="267">@Strings.Stimulation</listEntry>
+			<listEntry value="270">@Strings.BlazingDark</listEntry>
+            <listEntry value="272">@Strings.Blazing</listEntry>
+            <listEntry value="275">@Strings.AliveDark</listEntry>
+			<listEntry value="277">@Strings.Alive</listEntry>
+            <listEntry value="280">@Strings.TropicalDark</listEntry>
+            <listEntry value="281">@Strings.TropicalLight</listEntry>
+			<listEntry value="282">@Strings.Tropical</listEntry>
         </settingConfig>
     </setting>
-
-    <setting propertyKey="@Properties.ForegroundColor" title="@Strings.ForegroundColorTitle">
+	
+	<setting propertyKey="@Properties.DisplaySecond" title="@Strings.DisplaySecondTitle">
         <settingConfig type="list">
-            <listEntry value="0x000000">@Strings.ColorBlack</listEntry>
-            <listEntry value="0x0000FF">@Strings.ColorBlue</listEntry>
-            <listEntry value="0xFF0000">@Strings.ColorRed</listEntry>
-            <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>
-        </settingConfig>
+			<listEntry value="0">@Strings.DisplaySecondOff</listEntry>
+            <listEntry value="1">@Strings.DisplaySecondActive</listEntry>
+            <listEntry value="2">@Strings.DisplaySecondAlways</listEntry>
+		</settingConfig>
+	</setting>
+
+    <setting propertyKey="@Properties.CaloriesGoal" title="@Strings.CaloriesGoalTitle" prompt="@Strings.CaloriesGoalPrompt">
+        <settingConfig type="numeric" min="0" max="10000" errorMessage="@Strings.CaloriesGoalError"/>
     </setting>
 
-    <setting propertyKey="@Properties.UseMilitaryFormat" title="@Strings.MilitaryFormatTitle">
+	<setting propertyKey="@Properties.DataField1" title="@Strings.DataField1Title">
+		<settingConfig type="list">
+			<listEntry value="0">@Strings.Battery</listEntry>
+			<listEntry value="1">@Strings.Steps</listEntry>
+			<listEntry value="2">@Strings.HeartRate</listEntry>
+			<listEntry value="3">@Strings.Calories</listEntry>
+			<listEntry value="4">@Strings.NextSunriseSunset</listEntry>
+			<listEntry value="5">@Strings.Distance</listEntry>
+			<listEntry value="6">@Strings.FloorsClimbed</listEntry>
+			<listEntry value="7">@Strings.ActiveMinutesWeek</listEntry>
+			<listEntry value="8">@Strings.Weather</listEntry>
+			<listEntry value="9">@Strings.SystemIndicators</listEntry>
+			<listEntry value="11">@Strings.MoveBar</listEntry>
+			<listEntry value="12">@Strings.RemainingTime</listEntry>
+			<listEntry value="13">@Strings.MetersClimbed</listEntry>
+			<listEntry value="-1">@Strings.Off</listEntry>
+		</settingConfig>
+	</setting>	
+	<setting propertyKey="@Properties.DataField2" title="@Strings.DataField2Title">
+		<settingConfig type="list">
+			<listEntry value="0">@Strings.Battery</listEntry>
+			<listEntry value="1">@Strings.Steps</listEntry>
+			<listEntry value="2">@Strings.HeartRate</listEntry>
+			<listEntry value="3">@Strings.Calories</listEntry>
+			<listEntry value="4">@Strings.NextSunriseSunset</listEntry>
+			<listEntry value="5">@Strings.Distance</listEntry>
+			<listEntry value="6">@Strings.FloorsClimbed</listEntry>
+			<listEntry value="7">@Strings.ActiveMinutesWeek</listEntry>
+			<listEntry value="8">@Strings.Weather</listEntry>
+			<listEntry value="9">@Strings.SystemIndicators</listEntry>	
+			<listEntry value="11">@Strings.MoveBar</listEntry>
+			<listEntry value="12">@Strings.RemainingTime</listEntry>
+			<listEntry value="13">@Strings.MetersClimbed</listEntry>
+			<listEntry value="-1">@Strings.Off</listEntry>
+		</settingConfig>
+	</setting>	
+	<setting propertyKey="@Properties.DataField3" title="@Strings.DataField3Title">
+		<settingConfig type="list">
+			<listEntry value="0">@Strings.Battery</listEntry>
+			<listEntry value="1">@Strings.Steps</listEntry>
+			<listEntry value="2">@Strings.HeartRate</listEntry>
+			<listEntry value="3">@Strings.Calories</listEntry>
+			<listEntry value="4">@Strings.NextSunriseSunset</listEntry>
+			<listEntry value="5">@Strings.Distance</listEntry>
+			<listEntry value="6">@Strings.FloorsClimbed</listEntry>
+			<listEntry value="7">@Strings.ActiveMinutesWeek</listEntry>
+			<listEntry value="8">@Strings.Weather</listEntry>
+			<listEntry value="9">@Strings.SystemIndicators</listEntry>
+			<listEntry value="11">@Strings.MoveBar</listEntry>
+			<listEntry value="12">@Strings.RemainingTime</listEntry>
+			<listEntry value="13">@Strings.MetersClimbed</listEntry>
+			<listEntry value="-1">@Strings.Off</listEntry>
+		</settingConfig>
+	</setting>
+
+	<setting propertyKey="@Properties.RemainingTimeToDate" title="@Strings.RemainingTimeToDateTitle" prompt="@Strings.RemainingTimeToDatePrompt">
+		<settingConfig type="date" min="1633824000" max="2145916800" errorMessage="@Strings.RemainingTimeToDateError"/>
+	</setting>
+
+	<setting propertyKey="@Properties.DataBarOuterLeftTop" title="@Strings.DataBarOuterLeftTopTitle">
+		<settingConfig type="list">
+			<listEntry value="0">@Strings.Battery</listEntry>
+			<listEntry value="1">@Strings.Steps</listEntry>
+			<listEntry value="3">@Strings.Calories</listEntry>
+			<listEntry value="6">@Strings.FloorsClimbed</listEntry>
+			<listEntry value="7">@Strings.ActiveMinutesWeek</listEntry>
+			<listEntry value="11">@Strings.MoveBar</listEntry>
+			<listEntry value="-1">@Strings.Off</listEntry>
+		</settingConfig>
+	</setting>
+	<setting propertyKey="@Properties.DataBarInnerRightBottom" title="@Strings.DataBarInnerRightBottomTitle">
+		<settingConfig type="list">
+			<listEntry value="0">@Strings.Battery</listEntry>
+			<listEntry value="1">@Strings.Steps</listEntry>
+			<listEntry value="3">@Strings.Calories</listEntry>
+			<listEntry value="6">@Strings.FloorsClimbed</listEntry>
+			<listEntry value="7">@Strings.ActiveMinutesWeek</listEntry>
+			<listEntry value="11">@Strings.MoveBar</listEntry>
+			<listEntry value="-1">@Strings.Off</listEntry>
+		</settingConfig>
+	</setting>
+
+	<setting propertyKey="@Properties.SunriseSunsetDrawing" title="@Strings.SunriseSunsetDrawingTitle">
         <settingConfig type="boolean" />
     </setting>
+
+	<setting propertyKey="@Properties.DataBarSplit" title="@Strings.DataBarSplitTitle">
+        <settingConfig type="list">
+			<listEntry value="0">@Strings.DataBarSplitOff</listEntry>
+            <listEntry value="1">@Strings.DataBarSplitOuterLeftTop</listEntry>
+            <listEntry value="2">@Strings.DataBarSplitInnerRightBottom</listEntry>
+            <listEntry value="3">@Strings.DataBarSplitAll</listEntry>
+		</settingConfig>
+	</setting>
 
 </settings>
