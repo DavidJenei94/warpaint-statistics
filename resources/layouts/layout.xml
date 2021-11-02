@@ -20,12 +20,6 @@
             <param name="font">smallFont</param>
             <param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
         </drawable>
-        <drawable class="Time" id="Seconds">
-            <param name="locX">dc.getWidth() * 0.32</param>
-            <param name="locY">dc.getHeight() * 0.81</param>
-            <param name="font">smallFont</param>
-            <param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
-        </drawable>
 
         <drawable class="Date" id="DateLabel">
             <param name="locX">dc.getWidth() * 0.55</param>

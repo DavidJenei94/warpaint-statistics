@@ -317,12 +317,13 @@ class SunriseSunset {
         }
     }
 
-// Change This Later to include all data fields
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	//! Check if sunrise sunset needs refresh
 	static function checkSunriseSunsetRefresh() as Void {
-		if (sunriseSunsetDrawingEnabled || selectedValueForDataField1 == DATA_SUNRISE_SUNSET || 
-			selectedValueForDataField2 == DATA_SUNRISE_SUNSET || selectedValueForDataField3 == DATA_SUNRISE_SUNSET) {
+		if (sunriseSunsetDrawingEnabled || 
+			selectedValueForDataField1 == DATA_SUNRISE_SUNSET || selectedValueForDataField2 == DATA_SUNRISE_SUNSET || 
+			selectedValueForDataField3 == DATA_SUNRISE_SUNSET || selectedValueForDataField4 == DATA_SUNRISE_SUNSET || 
+			selectedValueForDataField5 == DATA_SUNRISE_SUNSET || selectedValueForDataField6 == DATA_SUNRISE_SUNSET) {
+			
 			checkSunriseSunsetRefreshNeed();
 		}
 	}

@@ -9,37 +9,12 @@ class Time extends WatchUi.Text {
 	private var _burnInProtection as Boolean; //true if amoled is in low power mode
 
 	private var _clockTime as ClockTime;
-	private var _time as String;
-	private var _AmPm as String;
-	private var _seconds as String;
 	
 	//! Constructor
 	//! @param params in the layout.xml the drawable object's param tags
 	function initialize(params) {
 		Text.initialize(params);
 	}
-	
-	// //! Gets the bounding box of the seconds to be able to use in 
-	// //! onPartialUpdate to update only the seconds region every seconds
-	// //! @param dc Device context
-	// //! @return Array of x, y, width, height of bounding box 
-	// (:partial_update)
-	// function getSecondsBoundingBox(dc as Dc) as Array<Number> {
-	// 	refreshTimeData();	
-	// 	// get the wider region in pixels of the current or the previous second
-	// 	var previousSecond = (_seconds.toNumber() - 1) % 60;
-	// 	var maxTextDimensions = dc.getTextDimensions(previousSecond.toString(), smallFont)[0] > dc.getTextDimensions(_seconds, smallFont)[0] ? 
-	// 		dc.getTextDimensions(previousSecond.toString(), smallFont) : 
-	// 		dc.getTextDimensions(_seconds, smallFont);
-	// 	var width = maxTextDimensions[0] + 2;
-	// 	var height = maxTextDimensions[1];
-		
-	// 	var timeWidth = getTimeWidth(dc);
-	// 	var x = dc.getWidth() / 2 + timeWidth + 3;
-	// 	var y = dc.getHeight() / 2 - (height / 2);
-
-	// 	return [x, y, width, height];
-	// }
 
 	//! Draw the time, AM/PM and seconds
 	//! @param dc Device Content
@@ -52,9 +27,7 @@ class Time extends WatchUi.Text {
 			drawMinute(dc);
 		} else if (id.equals("AmPm")) {
 			drawAmPm(dc);
-		} else if (id.equals("Seconds")) {
-			drawSeconds(dc);
-		}
+		} 
 	}
 
 	//! Draw the hours
@@ -101,19 +74,6 @@ class Time extends WatchUi.Text {
 		Text.draw(dc);
 	}
 	
-	// //! Draw the time according to the settings, eg. 12:34
-	// //! @param dc Device Content
-	// function drawTime(dc as Dc) as Void {
-	// 	refreshTimeData();
-	// 	if (_burnInProtection) {
-	// 		self.setColor(Graphics.COLOR_WHITE);
-	// 	} else {
-	// 		self.setColor(themeColors[:foregroundSecondaryColor]);
-	// 	}	
-    //     self.setText(_time);
-	// 	Text.draw(dc);
-	// }
-	
 	//! Draw AM or PM in front of time if 12 hour format is set
 	//! @param dc Device Content
 	function drawAmPm(dc as Dc) as Void {
@@ -125,28 +85,10 @@ class Time extends WatchUi.Text {
 		}
 	}
 	
-	//! Draw the seconds after the time
-	//! @param dc Device Content
-	function drawSeconds(dc as Dc) as Void {	
-		var secondsString = _clockTime.sec.format("%02d");
-		self.setColor(themeColors[:foregroundPrimaryColor]);
-		self.setText(secondsString);
-		Text.draw(dc);
-	}
-	
 	//! Refresh time data
 	private function refreshTimeData() as Void {
-		_clockTime = System.getClockTime();
-		// _time = calculateTime();
-		// _seconds = _clockTime.sec.toString();			
+		_clockTime = System.getClockTime();			
 	}
-	
-	
-	// //! Gets the half of the width of the time text to postion AM/PM and seconds
-	// //! @return half of the width of the time in pixels
-	// private function getTimeWidth(dc as Dc) as Number {
-	// 	return dc.getTextWidthInPixels(_time, largeFont) / 2;
-	// }
 
 	//! Set settings
 	//! @param settings DeviceSettings
