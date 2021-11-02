@@ -8,6 +8,7 @@ class DataField extends WatchUi.Text {
 
 	private var _x as Number;
 	private var _y as Number;
+	private var _fixed as Boolean;
 	private var _pixelsBetweenIconAndData as Number;
 	
 	//! Constructor
@@ -16,8 +17,9 @@ class DataField extends WatchUi.Text {
 		Text.initialize(params);
 		_x = params[:locX];
 		_y = params[:locY];
+		_fixed = params[:fixed];
 		
-		_pixelsBetweenIconAndData = 4;
+		_pixelsBetweenIconAndData = 15;
 	}
 
 	//! Set Selected Data
@@ -42,8 +44,12 @@ class DataField extends WatchUi.Text {
 	private function drawData(dc as Dc, dataText as String, iconText as String, iconColor as Number) as Void {
 		drawIcon(dc, iconText, iconColor, dataText);
 		
-		self.setLocation(calculateNewXForData(dc, dataText, iconText) + _pixelsBetweenIconAndData / 2, _y);
-		self.setColor(themeColors[:foregroundPrimaryColor]);		
+		if (_fixed) {
+			self.setColor(themeColors[:foregroundSecondaryColor]);
+		} else {
+			self.setColor(themeColors[:foregroundPrimaryColor]);
+		}
+				
         self.setText(dataText);
 		Text.draw(dc);
 	}
@@ -55,11 +61,20 @@ class DataField extends WatchUi.Text {
 	//! @param dataText Data in string format
 	private function drawIcon(dc as Dc, iconText as String, color as Number, dataText as String) as Void {
 		if (!themeColors[:isColorful]) {
-			dc.setColor(themeColors[:foregroundSecondaryColor], Graphics.COLOR_TRANSPARENT);
+			if (_fixed) {
+				dc.setColor(themeColors[:foregroundPrimaryColor], Graphics.COLOR_TRANSPARENT);
+			} else {
+				dc.setColor(themeColors[:foregroundSecondaryColor], Graphics.COLOR_TRANSPARENT);
+			}
 		} else {
 			dc.setColor(color, Graphics.COLOR_TRANSPARENT);
 		}
-		dc.drawText(calculateNewXForData(dc, dataText, iconText) - _pixelsBetweenIconAndData / 2, _y, iconFont, iconText, Graphics.TEXT_JUSTIFY_RIGHT | Graphics.TEXT_JUSTIFY_VCENTER);
+		// dc.drawText(calculateNewXForData(dc, dataText, iconText) - _pixelsBetweenIconAndData / 2, _y, iconFont, iconText, Graphics.TEXT_JUSTIFY_RIGHT | Graphics.TEXT_JUSTIFY_VCENTER);
+		if (_fixed) {
+			dc.drawText(_x, _y, iconFont, iconText, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+		} else {
+			dc.drawText(_x - _pixelsBetweenIconAndData, _y, iconFont, iconText, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+		}
 	}
 	
 	//! Calculate the new x position for data text

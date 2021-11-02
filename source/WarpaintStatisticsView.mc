@@ -44,19 +44,24 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
     private function loadDrawables() as Void {
         viewDrawables[:hourText] = View.findDrawableById("Hour");
         viewDrawables[:minuteText] = View.findDrawableById("Minute");
-		// if (_burnInProtection) {
-		// 	viewDrawables[:timeTextTop] = View.findDrawableById("AlwaysOnTimeLabelTopLabel");
-		// 	viewDrawables[:timeTextBottom] = View.findDrawableById("AlwaysOnTimeLabelBottomLabel");
-		// }
-        // viewDrawables[:dateText] = View.findDrawableById("DateLabel");
+        viewDrawables[:AmPmText] = View.findDrawableById("AmPm");
+        viewDrawables[:secondsText] = View.findDrawableById("Seconds");
+		if (_burnInProtection) {
+			viewDrawables[:hourTextLeft] = View.findDrawableById("AlwaysOnHourLeft");
+			viewDrawables[:minuteTextLeft] = View.findDrawableById("AlwaysOnMinuteLeft");
+			viewDrawables[:hourTextRight] = View.findDrawableById("AlwaysOnHourRight");
+			viewDrawables[:minuteTextRight] = View.findDrawableById("AlwaysOnMinuteRight");
+		}
+        viewDrawables[:dateText] = View.findDrawableById("DateLabel");
 
+        viewDrawables[:dataFieldTopText] = View.findDrawableById("DataFieldTop");
+        viewDrawables[:dataFieldBottomText] = View.findDrawableById("DataFieldBottom");
         viewDrawables[:dataField1Text] = View.findDrawableById("DataField1");
 		viewDrawables[:dataField2Text] = View.findDrawableById("DataField2");
 		viewDrawables[:dataField3Text] = View.findDrawableById("DataField3");
 		viewDrawables[:dataField4Text] = View.findDrawableById("DataField4");
 		viewDrawables[:dataField5Text] = View.findDrawableById("DataField5");
 		viewDrawables[:dataField6Text] = View.findDrawableById("DataField6");
-		viewDrawables[:dataField7Text] = View.findDrawableById("DataField7");
 
 		viewDrawables[:leftDataBar] = View.findDrawableById("OuterLeftTopDataBar");
 		viewDrawables[:rightDataBar] = View.findDrawableById("InnerRightBottomDataBar");
@@ -76,37 +81,67 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
 			dc.setAntiAlias(true);
 		}
 
-        // Set settings to the Time and databars
-        viewDrawables[:hourText].setSettings(_deviceSettings);
-        viewDrawables[:leftDataBar].setSettings(_deviceSettings);
-        viewDrawables[:rightDataBar].setSettings(_deviceSettings);
-        // Set BurnInProtection for Time layout
-        viewDrawables[:hourText].setBurnInProtection(_burnInTimeDisplayed);
-        viewDrawables[:minuteText].setBurnInProtection(_burnInTimeDisplayed);
+        // If AMOLED watch is in low power mode it shows different layout
+		if (_burnInProtection && !_isAwake) {
+            // Load actual layout
+            // Free memory of other drawables (reload later when awake)
+            if (_burnInTimeChanged) {
+                setLayout(Rez.Layouts.AlwaysOnLeft(dc));
+            } else {
+                setLayout(Rez.Layouts.AlwaysOnRight(dc));
+            }
+            loadDrawables();
 
-        // Refresh data 
-        _data.refreshData(_deviceSettings);
+            _burnInTimeDisplayed = true;
 
-        // Check if refresh sunriseSunset is necessary
-        SunriseSunset.checkSunriseSunsetRefresh();
+			// Draw To AlwaysOnLayout
+			drawAlwaysOn(dc);
 
-        // Set data for data fields
-        viewDrawables[:dataField1Text].setSelectedData(_data.getDataForDataField(selectedValueForDataField1));
-        viewDrawables[:dataField2Text].setSelectedData(_data.getDataForDataField(selectedValueForDataField2));
-        viewDrawables[:dataField3Text].setSelectedData(_data.getDataForDataField(selectedValueForDataField3));
-        viewDrawables[:dataField4Text].setSelectedData(_data.getDataForDataField(selectedValueForDataField4));
-        viewDrawables[:dataField5Text].setSelectedData(_data.getDataForDataField(selectedValueForDataField5));
-        viewDrawables[:dataField6Text].setSelectedData(_data.getDataForDataField(selectedValueForDataField6));
-        viewDrawables[:dataField7Text].setSelectedData(_data.getDataForDataField(selectedValueForDataField7));
-        
-        // Set data for databars
-        if (!sunriseSunsetDrawingEnabled) {
-            viewDrawables[:leftDataBar].setSelectedData(_data.getDataForDataField(selectedValueForDataBarOuterLeftTop));
+            _burnInTimeChanged = !_burnInTimeChanged;
+            
+		} else {
+            // Reload drawables if changed from low power mode in case of AMOLED
+			if (_burnInProtection && _burnInTimeDisplayed) {
+				setLayout(Rez.Layouts.WatchFace(dc));
+				loadDrawables();
+
+				_burnInTimeDisplayed = false;
+			}
+
+            // Set settings to the Time and databars
+            viewDrawables[:hourText].setSettings(_deviceSettings);
+            viewDrawables[:AmPmText].setSettings(_deviceSettings);
+            viewDrawables[:leftDataBar].setSettings(_deviceSettings);
+            viewDrawables[:rightDataBar].setSettings(_deviceSettings);
+            // Set BurnInProtection for Time layout
+            viewDrawables[:hourText].setBurnInProtection(_burnInTimeDisplayed);
+            viewDrawables[:minuteText].setBurnInProtection(_burnInTimeDisplayed);
+
+            // Refresh data 
+            _data.refreshData(_deviceSettings);
+
+            // Check if refresh sunriseSunset is necessary
+            SunriseSunset.checkSunriseSunsetRefresh();
+
+            // Set data for data fields
+            viewDrawables[:dataFieldTopText].setSelectedData(_data.getDataForDataField(selectedValueForDataFieldTop));
+            viewDrawables[:dataFieldBottomText].setSelectedData(_data.getDataForDataField(selectedValueForDataFieldBottom));
+            viewDrawables[:dataField1Text].setSelectedData(_data.getDataForDataField(selectedValueForDataField1));
+            viewDrawables[:dataField2Text].setSelectedData(_data.getDataForDataField(selectedValueForDataField2));
+            viewDrawables[:dataField3Text].setSelectedData(_data.getDataForDataField(selectedValueForDataField3));
+            viewDrawables[:dataField4Text].setSelectedData(_data.getDataForDataField(selectedValueForDataField4));
+            viewDrawables[:dataField5Text].setSelectedData(_data.getDataForDataField(selectedValueForDataField5));
+            viewDrawables[:dataField6Text].setSelectedData(_data.getDataForDataField(selectedValueForDataField6));
+            
+            // Set data for databars
+            if (!sunriseSunsetDrawingEnabled) {
+                viewDrawables[:leftDataBar].setSelectedData(_data.getDataForDataField(selectedValueForDataBarOuterLeftTop));
+            }
+            viewDrawables[:rightDataBar].setSelectedData(_data.getDataForDataField(selectedValueForDataBarInnerRightBottom));
+
+            // Call the parent onUpdate function to redraw the layout
+            View.onUpdate(dc);
         }
-        viewDrawables[:rightDataBar].setSelectedData(_data.getDataForDataField(selectedValueForDataBarInnerRightBottom));
-
-        // Call the parent onUpdate function to redraw the layout
-        View.onUpdate(dc);
     }
 
     // Called when this View is removed from the screen. Save the
@@ -117,18 +152,56 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
 
     // The user has just looked at their watch. Timers and animations may be started here.
     function onExitSleep() as Void {
+        _isAwake = true;
+		WatchUi.requestUpdate();
     }
 
     // Terminate any active timers and prepare for slow updates.
     function onEnterSleep() as Void {
+        _isAwake = false;
+		WatchUi.requestUpdate(); // call onUpdate() in order to draw seconds
     }
 
     //! Load fonts - in View, because WatchUI is not supported in background events
     function loadFonts() as Void {
-		// smallFont = WatchUi.loadResource(Rez.Fonts.SmallFont);
+		smallFont = WatchUi.loadResource(Rez.Fonts.SmallFont);
 		mediumFont = WatchUi.loadResource(Rez.Fonts.MediumFont);
 		largeFont = WatchUi.loadResource(Rez.Fonts.LargeFont);
 		iconFont = WatchUi.loadResource(Rez.Fonts.IconFont);
     }
 
+	//! Reload DeviceSettings when settings are changed
+    function onSettingsChanged() as Void {
+		_deviceSettings = System.getDeviceSettings();
+	}
+
+	//! Draw To AlwaysOnLayout
+	//! @param dc Device context
+	(:burn_in_protection)
+	function drawAlwaysOn(dc as Dc) as Void {
+        if (_burnInTimeChanged) {
+            // Set settings and BurnInProtection for Time layout
+            viewDrawables[:hourTextLeft].setSettings(_deviceSettings);
+            viewDrawables[:hourTextLeft].setBurnInProtection(_burnInTimeDisplayed);
+            viewDrawables[:minuteTextLeft].setBurnInProtection(_burnInTimeDisplayed);
+        } else {
+            // Set settings and BurnInProtection for Time layout
+            viewDrawables[:hourTextRight].setSettings(_deviceSettings);
+            viewDrawables[:hourTextRight].setBurnInProtection(_burnInTimeDisplayed);
+            viewDrawables[:minuteTextRight].setBurnInProtection(_burnInTimeDisplayed);
+        }
+
+        // Call the parent onUpdate function to redraw the layout
+        View.onUpdate(dc);
+
+        var height = dc.getHeight();
+        var width = dc.getWidth();
+        dc.setPenWidth(1);
+        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
+        if (_burnInTimeChanged) {
+            dc.drawLine(width * 0.5, height * 0.1, width * 0.5, height * 0.9);
+        } else {
+            dc.drawLine(width * 0.5 - 1, height * 0.1, width * 0.5 - 1, height * 0.9);
+        }
+	}
 }

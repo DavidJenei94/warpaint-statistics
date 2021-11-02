@@ -5,6 +5,7 @@ import Toybox.WatchUi;
 // global variables
 var myView as View;
 
+var smallFont as Font;
 var mediumFont as Font;
 var largeFont as Font;
 var iconFont as Font;
@@ -19,13 +20,14 @@ var themeColors = {
 
 var displaySecond as Integer;
 
+var selectedValueForDataFieldTop as Integer;
+var selectedValueForDataFieldBottom as Integer;
 var selectedValueForDataField1 as Integer;
 var selectedValueForDataField2 as Integer;
 var selectedValueForDataField3 as Integer;
 var selectedValueForDataField4 as Integer;
 var selectedValueForDataField5 as Integer;
 var selectedValueForDataField6 as Integer;
-var selectedValueForDataField7 as Integer;
 
 var selectedToDate as Number;
 
@@ -97,6 +99,11 @@ class WarpaintStatisticsApp extends Application.AppBase {
 
     // New app settings have been received so trigger a UI update
     function onSettingsChanged() as Void {
+        setGlobalVariables();
+        Theme.selectThemeColors();
+        myView.loadFonts();
+        myView.onSettingsChanged();
+
         WatchUi.requestUpdate();
     }
 
@@ -116,13 +123,14 @@ class WarpaintStatisticsApp extends Application.AppBase {
 
         displaySecond = Properties.getValue("DisplaySecond");
 
+        selectedValueForDataFieldTop = Properties.getValue("DataFieldTop");
+        selectedValueForDataFieldBottom = Properties.getValue("DataFieldBottom");
         selectedValueForDataField1 = Properties.getValue("DataField1");
         selectedValueForDataField2 = Properties.getValue("DataField2");
         selectedValueForDataField3 = Properties.getValue("DataField3");
         selectedValueForDataField4 = Properties.getValue("DataField4");
         selectedValueForDataField5 = Properties.getValue("DataField5");
         selectedValueForDataField6 = Properties.getValue("DataField6");
-        selectedValueForDataField7 = Properties.getValue("DataField7");
         selectedValueForDataBarOuterLeftTop = Properties.getValue("DataBarOuterLeftTop");
         selectedValueForDataBarInnerRightBottom = Properties.getValue("DataBarInnerRightBottom");
         sunriseSunsetDrawingEnabled = Properties.getValue("SunriseSunsetDrawing");
@@ -143,13 +151,14 @@ class WarpaintStatisticsApp extends Application.AppBase {
 
         displaySecond = getApp().getProperty("DisplaySecond");
 
+        selectedValueForDataFieldTop = getApp().getProperty("DataFieldTop");
+        selectedValueForDataFieldBottom = getApp().getProperty("DataFieldBottom");
         selectedValueForDataField1 = getApp().getProperty("DataField1");
         selectedValueForDataField2 = getApp().getProperty("DataField2");
         selectedValueForDataField3 = getApp().getProperty("DataField3");
         selectedValueForDataField4 = getApp().getProperty("DataField4");
         selectedValueForDataField5 = getApp().getProperty("DataField5");
         selectedValueForDataField6 = getApp().getProperty("DataField6");
-        selectedValueForDataField7 = getApp().getProperty("DataField7");
         selectedValueForDataBarOuterLeftTop = getApp().getProperty("DataBarOuterLeftTop");
         selectedValueForDataBarInnerRightBottom = getApp().getProperty("DataBarInnerRightBottom");
         sunriseSunsetDrawingEnabled = getApp().getProperty("SunriseSunsetDrawing");

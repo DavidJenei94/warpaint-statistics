@@ -45,10 +45,15 @@ class Time extends WatchUi.Text {
 	//! @param dc Device Content
 	function draw(dc as Dc) as Void {
 		refreshTimeData();
-		if (self.identifier.equals("Hour")) {
+		var id = self.identifier;
+		if (id.equals("Hour") || id.equals("AlwaysOnHourLeft") || id.equals("AlwaysOnHourRight")) {
 			drawHour(dc);
-		} else if (self.identifier.equals("Minute")) {
+		} else if (id.equals("Minute") || id.equals("AlwaysOnMinuteLeft") || id.equals("AlwaysOnMinuteRight")) {
 			drawMinute(dc);
+		} else if (id.equals("AmPm")) {
+			drawAmPm(dc);
+		} else if (id.equals("Seconds")) {
+			drawSeconds(dc);
 		}
 	}
 
@@ -56,6 +61,10 @@ class Time extends WatchUi.Text {
 	//! @param dc Device Content
 	function drawHour(dc as Dc) as Void {
 		var hours = _clockTime.hour;
+
+		if (_burnInProtection) {
+			self.setColor(Graphics.COLOR_WHITE);
+		}
         if (!_settings.is24Hour) {
             if (hours > 12) {
                 hours = hours - 12;
@@ -64,14 +73,13 @@ class Time extends WatchUi.Text {
 		var hoursString = hours.format("%02d");
 
 		// manual testing:
-		hoursString = "04";
+		// hoursString = "04";
 
-		self.setColor(Graphics.COLOR_WHITE);
-		// if (_burnInProtection) {
-		// 	self.setColor(Graphics.COLOR_WHITE);
-		// } else {
-		// 	self.setColor(themeColors[:foregroundSecondaryColor]);
-		// }	
+		if (_burnInProtection) {
+			self.setColor(Graphics.COLOR_WHITE);
+		} else {
+			self.setColor(themeColors[:foregroundPrimaryColor]);
+		}	
 		self.setText(hoursString);
 		Text.draw(dc);
 	}
@@ -82,14 +90,13 @@ class Time extends WatchUi.Text {
 		var minutesString = _clockTime.min.format("%02d");
 		
 		// manual testing:
-		minutesString = "44";
+		// minutesString = "44";
 
-		self.setColor(Graphics.COLOR_WHITE);
-		// if (_burnInProtection) {
-		// 	self.setColor(Graphics.COLOR_WHITE);
-		// } else {
-		// 	self.setColor(themeColors[:foregroundSecondaryColor]);
-		// }	
+		if (_burnInProtection) {
+			self.setColor(Graphics.COLOR_WHITE);
+		} else {
+			self.setColor(themeColors[:foregroundSecondaryColor]);
+		}	
 		self.setText(minutesString);
 		Text.draw(dc);
 	}
@@ -107,39 +114,25 @@ class Time extends WatchUi.Text {
 	// 	Text.draw(dc);
 	// }
 	
-	// //! Draw AM or PM in front of time if 12 hour format is set
-	// //! @param dc Device Content
-	// function drawAmPm(dc as Dc) as Void {
-	// 	if (!_settings.is24Hour) {
-	// 		_AmPm = _clockTime.hour >= 12 ? "PM" : "AM";
-	// 		var x = dc.getWidth() / 2 - getTimeWidth(dc) - (dc.getTextWidthInPixels(_AmPm, smallFont) / 2 + 3); // 3 pixels from time
-	// 		var y = dc.getHeight() / 2;
-	// 		dc.setColor(themeColors[:foregroundPrimaryColor], themeColors[:backgroundColor]);
-	// 		dc.drawText(
-	// 			x, 
-	// 			y, 
-	// 			smallFont, 
-	// 			_AmPm, 
-	// 			Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
-	// 		);
-	// 	}
-	// }
+	//! Draw AM or PM in front of time if 12 hour format is set
+	//! @param dc Device Content
+	function drawAmPm(dc as Dc) as Void {
+		if (!_settings.is24Hour) {
+			var AmPmString = _clockTime.hour >= 12 ? "PM" : "AM";
+			self.setColor(themeColors[:foregroundSecondaryColor]);
+			self.setText(AmPmString);
+			Text.draw(dc);
+		}
+	}
 	
-	// //! Draw the seconds after the time
-	// //! @param dc Device Content
-	// function drawSeconds(dc as Dc) as Void {	
-	// 	refreshTimeData();
-	// 	var x = dc.getWidth() / 2 + getTimeWidth(dc) + (dc.getTextWidthInPixels(_seconds, smallFont) / 2 + 3); // 3 pixels from time
-	// 	var y = dc.getHeight() / 2;
-	// 	dc.setColor(themeColors[:foregroundPrimaryColor], themeColors[:backgroundColor]);
-	// 	dc.drawText(
-	// 		x, 
-	// 		y, 
-	// 		smallFont, 
-	// 		_seconds, 
-	// 		Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
-	// 	);
-	// }
+	//! Draw the seconds after the time
+	//! @param dc Device Content
+	function drawSeconds(dc as Dc) as Void {	
+		var secondsString = _clockTime.sec.format("%02d");
+		self.setColor(themeColors[:foregroundPrimaryColor]);
+		self.setText(secondsString);
+		Text.draw(dc);
+	}
 	
 	//! Refresh time data
 	private function refreshTimeData() as Void {

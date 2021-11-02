@@ -137,6 +137,10 @@
     <string id="DataField1Title">Data Field 1</string>
     <string id="DataField2Title">Data Field 2</string>
     <string id="DataField3Title">Data Field 3</string>
+    <string id="DataField4Title">Data Field 4</string>
+    <string id="DataField5Title">Data Field 5</string>
+    <string id="DataField6Title">Data Field 6</string>
+    <string id="DataField7Title">Data Field 7</string>
 
     <string id="RemainingTimeToDateTitle">Select the date to calculate the remaining days</string>
     <string id="RemainingTimeToDatePrompt">Only works with the 'Remaining days to selected date' data field</string>

@@ -1,6 +1,5 @@
 <settings>
 
-
 	<setting propertyKey="@Properties.Theme" title="@Strings.ThemeTitle">
         <settingConfig type="list">
 			<!-- Basic themes (28) -->
@@ -174,6 +173,60 @@
 		</settingConfig>
 	</setting>	
 	<setting propertyKey="@Properties.DataField3" title="@Strings.DataField3Title">
+		<settingConfig type="list">
+			<listEntry value="0">@Strings.Battery</listEntry>
+			<listEntry value="1">@Strings.Steps</listEntry>
+			<listEntry value="2">@Strings.HeartRate</listEntry>
+			<listEntry value="3">@Strings.Calories</listEntry>
+			<listEntry value="4">@Strings.NextSunriseSunset</listEntry>
+			<listEntry value="5">@Strings.Distance</listEntry>
+			<listEntry value="6">@Strings.FloorsClimbed</listEntry>
+			<listEntry value="7">@Strings.ActiveMinutesWeek</listEntry>
+			<listEntry value="8">@Strings.Weather</listEntry>
+			<listEntry value="9">@Strings.SystemIndicators</listEntry>
+			<listEntry value="11">@Strings.MoveBar</listEntry>
+			<listEntry value="12">@Strings.RemainingTime</listEntry>
+			<listEntry value="13">@Strings.MetersClimbed</listEntry>
+			<listEntry value="-1">@Strings.Off</listEntry>
+		</settingConfig>
+	</setting>
+	<setting propertyKey="@Properties.DataField4" title="@Strings.DataField4Title">
+		<settingConfig type="list">
+			<listEntry value="0">@Strings.Battery</listEntry>
+			<listEntry value="1">@Strings.Steps</listEntry>
+			<listEntry value="2">@Strings.HeartRate</listEntry>
+			<listEntry value="3">@Strings.Calories</listEntry>
+			<listEntry value="4">@Strings.NextSunriseSunset</listEntry>
+			<listEntry value="5">@Strings.Distance</listEntry>
+			<listEntry value="6">@Strings.FloorsClimbed</listEntry>
+			<listEntry value="7">@Strings.ActiveMinutesWeek</listEntry>
+			<listEntry value="8">@Strings.Weather</listEntry>
+			<listEntry value="9">@Strings.SystemIndicators</listEntry>
+			<listEntry value="11">@Strings.MoveBar</listEntry>
+			<listEntry value="12">@Strings.RemainingTime</listEntry>
+			<listEntry value="13">@Strings.MetersClimbed</listEntry>
+			<listEntry value="-1">@Strings.Off</listEntry>
+		</settingConfig>
+	</setting>
+	<setting propertyKey="@Properties.DataField5" title="@Strings.DataField5Title">
+		<settingConfig type="list">
+			<listEntry value="0">@Strings.Battery</listEntry>
+			<listEntry value="1">@Strings.Steps</listEntry>
+			<listEntry value="2">@Strings.HeartRate</listEntry>
+			<listEntry value="3">@Strings.Calories</listEntry>
+			<listEntry value="4">@Strings.NextSunriseSunset</listEntry>
+			<listEntry value="5">@Strings.Distance</listEntry>
+			<listEntry value="6">@Strings.FloorsClimbed</listEntry>
+			<listEntry value="7">@Strings.ActiveMinutesWeek</listEntry>
+			<listEntry value="8">@Strings.Weather</listEntry>
+			<listEntry value="9">@Strings.SystemIndicators</listEntry>
+			<listEntry value="11">@Strings.MoveBar</listEntry>
+			<listEntry value="12">@Strings.RemainingTime</listEntry>
+			<listEntry value="13">@Strings.MetersClimbed</listEntry>
+			<listEntry value="-1">@Strings.Off</listEntry>
+		</settingConfig>
+	</setting>
+	<setting propertyKey="@Properties.DataField6" title="@Strings.DataField6Title">
 		<settingConfig type="list">
 			<listEntry value="0">@Strings.Battery</listEntry>
 			<listEntry value="1">@Strings.Steps</listEntry>
