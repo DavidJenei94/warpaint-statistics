@@ -19,7 +19,7 @@ class DataField extends WatchUi.Text {
 		_y = params[:locY];
 		_fixed = params[:fixed];
 		
-		_pixelsBetweenIconAndData = 15;
+		_pixelsBetweenIconAndData = params[:iconSpace];
 	}
 
 	//! Set Selected Data
@@ -69,24 +69,11 @@ class DataField extends WatchUi.Text {
 		} else {
 			dc.setColor(color, Graphics.COLOR_TRANSPARENT);
 		}
-		// dc.drawText(calculateNewXForData(dc, dataText, iconText) - _pixelsBetweenIconAndData / 2, _y, iconFont, iconText, Graphics.TEXT_JUSTIFY_RIGHT | Graphics.TEXT_JUSTIFY_VCENTER);
+
 		if (_fixed) {
 			dc.drawText(_x, _y, iconFont, iconText, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
 		} else {
 			dc.drawText(_x - _pixelsBetweenIconAndData, _y, iconFont, iconText, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
 		}
 	}
-	
-	//! Calculate the new x position for data text
-	//! Make the icon and data text in the middle of the original data's place
-	//! @param dc Device Content
-	//! @param dataText Data in string format
-	//! @param iconText Letter for icon in string format
-	//! return new x position
-	private function calculateNewXForData(dc as Dc, dataText as String, iconText as String) as Number {
-		var dataWidth = dc.getTextWidthInPixels(dataText, mediumFont);
-		var iconWidth = dc.getTextWidthInPixels(iconText, iconFont);
-		
-		return (_x - (dataWidth - ((dataWidth + iconWidth + _pixelsBetweenIconAndData) / 2)));
-	}	
 }

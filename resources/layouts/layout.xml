@@ -1,10 +1,10 @@
 <resources>
-    <layout id="WatchFace">
+    <layout id="WatchFaceLeft">
         <drawable class="Background" />
         
         <drawable class="Time" id="Hour">
             <param name="locX">dc.getWidth() * 0.32</param>
-            <param name="locY">dc.getHeight() * 0.37</param>
+            <param name="locY">dc.getHeight() * 0.35</param>
             <param name="font">largeFont</param>
             <param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
         </drawable>
@@ -16,13 +16,13 @@
         </drawable>
         <drawable class="Time" id="AmPm">
             <param name="locX">dc.getWidth() * 0.32</param>
-            <param name="locY">dc.getHeight() * 0.22</param>
+            <param name="locY">dc.getHeight() * 0.20</param>
             <param name="font">smallFont</param>
             <param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
         </drawable>
 
         <drawable class="Date" id="DateLabel">
-            <param name="locX">dc.getWidth() * 0.55</param>
+            <param name="locX">dc.getWidth() * 0.53</param>
             <param name="locY">dc.getHeight() * 0.50</param>
             <param name="font">smallFont</param>
             <param name="justification">Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER</param>
@@ -43,39 +43,45 @@
             <param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
         </drawable>
         <drawable class="DataField" id="DataField1">
-            <param name="locX">dc.getWidth() * 0.64</param>
+            <param name="locX">dc.getWidth() * 0.62</param>
             <param name="locY">dc.getHeight() * 0.23</param>
             <param name="font">mediumFont</param>
+            <param name="iconSpace">15</param>
             <param name="justification">Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER</param>
         </drawable>
         <drawable class="DataField" id="DataField2">
-            <param name="locX">dc.getWidth() * 0.64</param>
+            <param name="locX">dc.getWidth() * 0.62</param>
             <param name="locY">dc.getHeight() * 0.32</param>
             <param name="font">mediumFont</param>
+            <param name="iconSpace">15</param>
             <param name="justification">Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER</param>
         </drawable>
         <drawable class="DataField" id="DataField3">
-            <param name="locX">dc.getWidth() * 0.64</param>
+            <param name="locX">dc.getWidth() * 0.62</param>
             <param name="locY">dc.getHeight() * 0.41</param>
             <param name="font">mediumFont</param>
+            <param name="iconSpace">15</param>
             <param name="justification">Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER</param>
         </drawable>
         <drawable class="DataField" id="DataField4">
-            <param name="locX">dc.getWidth() * 0.64</param>
+            <param name="locX">dc.getWidth() * 0.62</param>
             <param name="locY">dc.getHeight() * 0.59</param>
             <param name="font">mediumFont</param>
+            <param name="iconSpace">15</param>
             <param name="justification">Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER</param>
         </drawable>
         <drawable class="DataField" id="DataField5">
-            <param name="locX">dc.getWidth() * 0.64</param>
+            <param name="locX">dc.getWidth() * 0.62</param>
             <param name="locY">dc.getHeight() * 0.68</param>
             <param name="font">mediumFont</param>
+            <param name="iconSpace">15</param>
             <param name="justification">Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER</param>
         </drawable>
         <drawable class="DataField" id="DataField6">
-            <param name="locX">dc.getWidth() * 0.64</param>
+            <param name="locX">dc.getWidth() * 0.62</param>
             <param name="locY">dc.getHeight() * 0.77</param>
             <param name="font">mediumFont</param>
+            <param name="iconSpace">15</param>
             <param name="justification">Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER</param>
         </drawable>
 
@@ -93,27 +99,28 @@
     <!-- Used for AMOLED watches when not awake -->
     <layout id="AlwaysOnLeft">
         <drawable class="Time" id="AlwaysOnHourLeft">
-            <param name="locX">dc.getWidth() * 0.32</param>
-            <param name="locY">dc.getHeight() * 0.37</param>
+            <param name="locX">dc.getWidth() * 0.30</param>
+            <param name="locY">dc.getHeight() * 0.35</param>
             <param name="font">largeFont</param>
             <param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
         </drawable>
         <drawable class="Time" id="AlwaysOnMinuteLeft">
-            <param name="locX">dc.getWidth() * 0.32</param>
+            <param name="locX">dc.getWidth() * 0.30</param>
             <param name="locY">dc.getHeight() * 0.63</param>
             <param name="font">largeFont</param>
             <param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
         </drawable>
     </layout>
+
     <layout id="AlwaysOnRight">
         <drawable class="Time" id="AlwaysOnHourRight">
-            <param name="locX">dc.getWidth() * 0.68</param>
-            <param name="locY">dc.getHeight() * 0.37</param>
+            <param name="locX">dc.getWidth() * 0.70</param>
+            <param name="locY">dc.getHeight() * 0.35</param>
             <param name="font">largeFont</param>
             <param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
         </drawable>
         <drawable class="Time" id="AlwaysOnMinuteRight">
-            <param name="locX">dc.getWidth() * 0.68</param>
+            <param name="locX">dc.getWidth() * 0.70</param>
             <param name="locY">dc.getHeight() * 0.63</param>
             <param name="font">largeFont</param>
             <param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>

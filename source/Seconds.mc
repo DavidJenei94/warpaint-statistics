@@ -46,6 +46,6 @@ class Seconds {
 		var x = _x - width / 2;
 		var y = _y - height / 2;
 
-		return [x, y, width, height];
+		return [x, y + height * 0.20, width, height * 0.80];
 	}
 }

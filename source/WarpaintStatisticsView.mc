@@ -8,9 +8,7 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
 
     private var viewDrawables = {};
 	private var _isAwake as Boolean;
-	private var _partialUpdatesAllowed as Boolean;
 	private var _seconds as Seconds;
-	private var _SecondsBoundingBox = new Number[4];
 
     private var _data as Data;
 
@@ -24,7 +22,6 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
         WatchFace.initialize();
         _deviceSettings = System.getDeviceSettings();
         _isAwake = true;
-        _partialUpdatesAllowed = (WatchUi.WatchFace has :onPartialUpdate);
         _data = new Data(_deviceSettings);
 
         // check Burn in Protect requirement
@@ -37,7 +34,7 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
 
     // Load your resources here
     function onLayout(dc as Dc) as Void {
-        setLayout(Rez.Layouts.WatchFace(dc));
+        setLayout(Rez.Layouts.WatchFaceLeft(dc));
         loadDrawables();
 
         _seconds = new Seconds(dc);
@@ -104,7 +101,7 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
 		} else {
             // Reload drawables if changed from low power mode in case of AMOLED
 			if (_burnInProtection && _burnInTimeDisplayed) {
-				setLayout(Rez.Layouts.WatchFace(dc));
+				setLayout(Rez.Layouts.WatchFaceLeft(dc));
 				loadDrawables();
 
 				_burnInTimeDisplayed = false;
@@ -146,11 +143,8 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
 
             // Draw seconds
 			if (System.getClockTime().sec != 0) {
-				if (_partialUpdatesAllowed && displaySecond == 2) {
-					// If this device supports partial updates
-					onPartialUpdate(dc);
-				} else if (_isAwake && displaySecond != 0) {
-					_seconds.drawSeconds(dc);
+				if ((displaySecond == 2) || (_isAwake && displaySecond != 0)) {
+					calculateAndDrawSeconds(dc);
 				}
 			}
         }
@@ -161,34 +155,45 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
 	(:partial_update)
     public function onPartialUpdate(dc as Dc) as Void {
 		if (displaySecond == 2 && System.getClockTime().sec != 0) {
-	        _SecondsBoundingBox = _seconds.getSecondsBoundingBox(dc);
-	  
-            // Set clip to the region of bounding box and which only updates that
-	        dc.setClip(_SecondsBoundingBox[0], _SecondsBoundingBox[1], _SecondsBoundingBox[2], _SecondsBoundingBox[3]);
-	        dc.setColor(themeColors[:foregroundPrimaryColor], themeColors[:backgroundColor]);
-	    	dc.clear();
-	        _seconds.drawSeconds(dc);
-	        
-	        dc.clearClip();
-		}
+            calculateAndDrawSeconds(dc);
+        }
     }
 
-    // Called when this View is removed from the screen. Save the
-    // state of this View here. This includes freeing resources from
-    // memory.
+    //! Called when this View is removed from the screen. Save the
+    //! state of this View here. This includes freeing resources from
+    //! memory.
     function onHide() as Void {
     }
 
-    // The user has just looked at their watch. Timers and animations may be started here.
+    //! The user has just looked at their watch. Timers and animations may be started here.
     function onExitSleep() as Void {
         _isAwake = true;
 		WatchUi.requestUpdate();
     }
 
-    // Terminate any active timers and prepare for slow updates.
+    //! Terminate any active timers and prepare for slow updates.
     function onEnterSleep() as Void {
         _isAwake = false;
 		WatchUi.requestUpdate(); // call onUpdate() in order to draw seconds
+    }
+
+    //! Calculate bounding box for seconds and draw
+    //! @param dc Device Content
+    function calculateAndDrawSeconds(dc as Dc) {
+        var secondsBoundingBox = _seconds.getSecondsBoundingBox(dc);
+    
+        // Set clip to the region of bounding box and which only updates that
+        dc.setClip(secondsBoundingBox[0], secondsBoundingBox[1], secondsBoundingBox[2], secondsBoundingBox[3]);
+        dc.setColor(themeColors[:foregroundPrimaryColor], themeColors[:backgroundColor]);
+        dc.clear();
+
+        _seconds.drawSeconds(dc);
+        
+        dc.clearClip();
+
+        // dc.setPenWidth(1);
+        // dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
+        // dc.drawRectangle(secondsBoundingBox[0], secondsBoundingBox[1], secondsBoundingBox[2], secondsBoundingBox[3]);
     }
 
     //! Load fonts - in View, because WatchUI is not supported in background events
