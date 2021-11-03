@@ -9,6 +9,7 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
     private var viewDrawables = {};
 	private var _isAwake as Boolean;
 	private var _seconds as Seconds;
+    private var _partialUpdatesAllowed as Boolean;
 
     private var _data as Data;
 
@@ -22,6 +23,7 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
         WatchFace.initialize();
         _deviceSettings = System.getDeviceSettings();
         _isAwake = true;
+        _partialUpdatesAllowed = (WatchUi.WatchFace has :onPartialUpdate);
         _data = new Data(_deviceSettings);
 
         // check Burn in Protect requirement
@@ -140,11 +142,14 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
 
             // Call the parent onUpdate function to redraw the layout
             View.onUpdate(dc);
-
+            
             // Draw seconds
 			if (System.getClockTime().sec != 0) {
-				if ((displaySecond == 2) || (_isAwake && displaySecond != 0)) {
-					calculateAndDrawSeconds(dc);
+				if (_partialUpdatesAllowed && displaySecond == 2) {
+					// If this device supports partial updates
+					onPartialUpdate(dc);
+				} else if (_isAwake && displaySecond != 0) {
+					_seconds.drawSeconds(dc);
 				}
 			}
         }
@@ -155,7 +160,20 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
 	(:partial_update)
     public function onPartialUpdate(dc as Dc) as Void {
 		if (displaySecond == 2 && System.getClockTime().sec != 0) {
-            calculateAndDrawSeconds(dc);
+            var secondsBoundingBox = _seconds.getSecondsBoundingBox(dc);
+        
+            // Set clip to the region of bounding box and which only updates that
+            dc.setClip(secondsBoundingBox[0], secondsBoundingBox[1], secondsBoundingBox[2], secondsBoundingBox[3]);
+            dc.setColor(themeColors[:foregroundPrimaryColor], themeColors[:backgroundColor]);
+            dc.clear();
+
+            _seconds.drawSeconds(dc);
+            
+            dc.clearClip();
+
+            // dc.setPenWidth(1);
+            // dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
+            // dc.drawRectangle(secondsBoundingBox[0], secondsBoundingBox[1], secondsBoundingBox[2], secondsBoundingBox[3]);
         }
     }
 
@@ -175,25 +193,6 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
     function onEnterSleep() as Void {
         _isAwake = false;
 		WatchUi.requestUpdate(); // call onUpdate() in order to draw seconds
-    }
-
-    //! Calculate bounding box for seconds and draw
-    //! @param dc Device Content
-    function calculateAndDrawSeconds(dc as Dc) {
-        var secondsBoundingBox = _seconds.getSecondsBoundingBox(dc);
-    
-        // Set clip to the region of bounding box and which only updates that
-        dc.setClip(secondsBoundingBox[0], secondsBoundingBox[1], secondsBoundingBox[2], secondsBoundingBox[3]);
-        dc.setColor(themeColors[:foregroundPrimaryColor], themeColors[:backgroundColor]);
-        dc.clear();
-
-        _seconds.drawSeconds(dc);
-        
-        dc.clearClip();
-
-        // dc.setPenWidth(1);
-        // dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
-        // dc.drawRectangle(secondsBoundingBox[0], secondsBoundingBox[1], secondsBoundingBox[2], secondsBoundingBox[3]);
     }
 
     //! Load fonts - in View, because WatchUI is not supported in background events

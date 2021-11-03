@@ -8,12 +8,12 @@
     
     <property id="DataFieldTop" type="number">11</property>
     <property id="DataFieldBottom" type="number">9</property>
-    <property id="DataField1" type="number">0</property>
-    <property id="DataField2" type="number">0</property>
-    <property id="DataField3" type="number">0</property>
-    <property id="DataField4" type="number">0</property>
-    <property id="DataField5" type="number">0</property>
-    <property id="DataField6" type="number">0</property>
+    <property id="DataField1" type="number">2</property> <!-- HR -->
+    <property id="DataField2" type="number">6</property> <!-- Floors_climbed -->
+    <property id="DataField3" type="number">5</property> <!-- Distance -->
+    <property id="DataField4" type="number">4</property> <!-- Sunrise_Sunset -->
+    <property id="DataField5" type="number">3</property> <!-- Calories -->
+    <property id="DataField6" type="number">8</property> <!-- Weather -->
     <property id="RemainingTimeToDate" type="number">1640995200</property>
 
     <property id="DataBarOuterLeftTop" type="number">0</property>

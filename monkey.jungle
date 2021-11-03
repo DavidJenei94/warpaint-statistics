@@ -1,1 +1,130 @@
 project.manifest = manifest.xml
+
+# Exclude other source directories (default behaviour is to include).
+base.sourcePath = source
+
+# Exclude annotations according to display shape
+round.excludeAnnotations = $(round.excludeAnnotations);semiroundShape;rectangleShape
+semiround.excludeAnnotations = $(semiround.excludeAnnotations);roundShape;rectangleShape
+rectangle.excludeAnnotations = $(rectangle.excludeAnnotations);roundShape;semiroundShape
+
+
+# Excluded watch faces right now:
+# epix - old product
+# fr45 - 8 colors, low memory (48 kb)
+# garminswim2 - 8 colors, low memory (48 kb)
+# vívolife - Low number of features
+
+
+# Exclude background annotation on devices CIQ 1.x (background_method) 
+# + weather + has_storage + partial_update
+# + standard and extra colored themes (can't display all color or does not have enough memory)
+# Exclude everything that does not necessary - for more optimization in memory
+# Low memory devices exclude some hardcoded motivational quotes to save memory (mainly 1.4.0 round watches because they have sunrise sunset)
+d2bravo.excludeAnnotations = $(d2bravo.excludeAnnotations);background_method;weather;has_storage;partial_update;standardThemes;extraThemes;burn_in_protection;background_method_motivation;low_memory_motivation
+d2bravo_titanium.excludeAnnotations = $(d2bravo_titanium.excludeAnnotations);background_method;weather;has_storage;partial_update;standardThemes;extraThemes;burn_in_protection;background_method_motivation;low_memory_motivation
+fenix3.excludeAnnotations = $(fenix3.excludeAnnotations);background_method;weather;has_storage;partial_update;standardThemes;extraThemes;burn_in_protection;background_method_motivation;low_memory_motivation
+fenix3_hr.excludeAnnotations = $(fenix3_hr.excludeAnnotations);background_method;weather;has_storage;partial_update;standardThemes;extraThemes;burn_in_protection;background_method_motivation;low_memory_motivation
+fr230.excludeAnnotations = $(fr230.excludeAnnotations);background_method;weather;has_storage;partial_update;standardThemes;extraThemes;burn_in_protection;background_method_motivation
+fr235.excludeAnnotations = $(fr235.excludeAnnotations);background_method;weather;has_storage;partial_update;standardThemes;extraThemes;burn_in_protection;background_method_motivation
+fr630.excludeAnnotations = $(fr630.excludeAnnotations);background_method;weather;has_storage;partial_update;standardThemes;extraThemes;burn_in_protection;background_method_motivation
+fr920xt.excludeAnnotations = $(fr920xt.excludeAnnotations);background_method;weather;has_storage;partial_update;standardThemes;extraThemes;burn_in_protection;background_method_motivation
+vivoactive.excludeAnnotations = $(vivoactive.excludeAnnotations);background_method;weather;has_storage;partial_update;standardThemes;extraThemes;burn_in_protection;background_method_motivation
+# Following devices do not have enough memory for all themes + not necessary methods
+fr735xt.excludeAnnotations = $(fr735xt.excludeAnnotations);background_method;weather;partial_update;standardThemes;extraThemes;floorsClimbed;sunriseSunset;has_no_storage;burn_in_protection;low_memory_motivation
+vivoactive_hr.excludeAnnotations = $(vivoactive_hr.excludeAnnotations);background_method;weather;partial_update;standardThemes;extraThemes;sunriseSunset;has_no_storage;burn_in_protection
+
+# Exclude weather annotation on devices lower than CIQ 3.2.0 too
+# 2.4.0
+approachs60.excludeAnnotations = $(approachs60.excludeAnnotations);weather
+fr735xt.excludeAnnotations = $(fr735xt.excludeAnnotations);weather
+vivoactive_hr.excludeAnnotations = $(vivoactive_hr.excludeAnnotations);weather
+# 3.0.0
+approachs62.excludeAnnotations = $(approachs62.excludeAnnotations);weather
+d2charlie.excludeAnnotations = $(d2charlie.excludeAnnotations);weather
+descentmk1.excludeAnnotations = $(descentmk1.excludeAnnotations);weather
+vivoactive3d.excludeAnnotations = $(vivoactive3d.excludeAnnotations);weather
+# 3.1.0
+d2delta.excludeAnnotations = $(d2delta.excludeAnnotations);weather
+d2deltapx.excludeAnnotations = $(d2deltapx.excludeAnnotations);weather
+d2deltas.excludeAnnotations = $(d2deltas.excludeAnnotations);weather
+fenix5.excludeAnnotations = $(fenix5.excludeAnnotations);weather
+fenix5s.excludeAnnotations = $(fenix5s.excludeAnnotations);weather
+fenix5x.excludeAnnotations = $(fenix5x.excludeAnnotations);weather
+fenixchronos.excludeAnnotations = $(fenixchronos.excludeAnnotations);weather
+fr645.excludeAnnotations = $(fr645.excludeAnnotations);weather
+fr935.excludeAnnotations = $(fr935.excludeAnnotations);weather
+vivoactive3.excludeAnnotations = $(vivoactive3.excludeAnnotations);weather
+vivoactive3mlte.excludeAnnotations = $(vivoactive3mlte.excludeAnnotations);weather
+# 3.2.0 and has no weather
+fr645m.excludeAnnotations = $(fr645m.excludeAnnotations);weather
+
+# Exclude partial update annotation where it is not available
+fenixchronos.excludeAnnotations = $(fenixchronos.excludeAnnotations);partial_update
+venusq.excludeAnnotations = $(venusq.excludeAnnotations);partial_update
+venusqm.excludeAnnotations = $(venusqm.excludeAnnotations);partial_update
+
+
+# CIQ 1.x watches have No Floors, Active Minutes support and Weather
+# Some of them have no HR support either
+# Low memory devices exclude some hardcoded motivational quotes to save memory (mainly 1.4.0 round watches because they have sunrise sunset)
+d2bravo.resourcePath = $(d2bravo.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x-no_hr
+d2bravo_titanium.resourcePath = $(d2bravo_titanium.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x
+fenix3.resourcePath = $(fenix3.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x-no_hr
+fenix3_hr.resourcePath = $(fenix3_hr.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x
+fr230.resourcePath = $(fr230.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x-no_hr
+fr235.resourcePath = $(fr235.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x
+fr630.resourcePath = $(fr630.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x-no_hr
+fr920xt.resourcePath = $(fr920xt.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x-no_hr
+vivoactive.resourcePath = $(vivoactive.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x-no_hr
+
+# devices lower than CIQ 3.2.0 have no Weather
+# 2.4.0
+# has own resourcepath - approachs60.resourcePath = $(approachs60.resourcePath);resources-no_weather
+# has own resourcepath - fr735xt.resourcePath = $(fr735xt.resourcePath);resources-no_weather
+vivoactive_hr.resourcePath = $(vivoactive_hr.resourcePath);resources-no_weather
+# 3.0.0
+# has own resourcepath - approachs62.resourcePath = $(approachs62.resourcePath);resources-no_weather
+d2charlie.resourcePath = $(d2charlie.resourcePath);resources-no_weather
+descentmk1.resourcePath = $(descentmk1.resourcePath);resources-no_weather
+vivoactive3d.resourcePath = $(vivoactive3d.resourcePath);resources-no_weather
+# 3.1.0
+d2delta.resourcePath = $(d2delta.resourcePath);resources-no_weather
+d2deltapx.resourcePath = $(d2deltapx.resourcePath);resources-no_weather
+d2deltas.resourcePath = $(d2deltas.resourcePath);resources-no_weather
+fenix5.resourcePath = $(fenix5.resourcePath);resources-no_weather
+fenix5s.resourcePath = $(fenix5s.resourcePath);resources-no_weather
+fenix5x.resourcePath = $(fenix5x.resourcePath);resources-no_weather
+fenixchronos.resourcePath = $(fenixchronos.resourcePath);resources-no_weather
+fr645.resourcePath = $(fr645.resourcePath);resources-no_weather
+fr935.resourcePath = $(fr935.resourcePath);resources-no_weather
+vivoactive3.resourcePath = $(vivoactive3.resourcePath);resources-no_weather
+vivoactive3mlte.resourcePath = $(vivoactive3mlte.resourcePath);resources-no_weather
+# 3.2.0
+fr645m.resourcePath = $(fr645m.resourcePath);resources-no_weather
+
+
+# Devices with no partial update and was not set before eg. in CIQ 1.x
+# + AMOLED devices also have no partial update option
+fenixchronos.resourcePath = $(fenixchronos.resourcePath);resources-no_partial_update
+venusq.resourcePath = $(venusq.resourcePath);resources-no_partial_update
+venusqm.resourcePath = $(venusqm.resourcePath);resources-no_partial_update
+
+d2air.resourcePath = $(d2air.resourcePath);resources-no_partial_update
+venu.resourcePath = $(venu.resourcePath);resources-no_partial_update
+venu2.resourcePath = $(venu2.resourcePath);resources-no_partial_update
+venu2s.resourcePath = $(venu2s.resourcePath);resources-no_partial_update
+venud.resourcePath = $(venud.resourcePath);resources-no_partial_update
+
+
+#  fr245/fr245m, venusq/venusqm, fr55 are CIQ 3.x, but do not support floors climbed.
+fr245.resourcePath = $(fr245.resourcePath);resources-no_floors
+fr245m.resourcePath = $(fr245m.resourcePath);resources-no_floors
+venusq.resourcePath = $(venusq.resourcePath);resources-no_floors
+venusqm.resourcePath = $(venusqm.resourcePath);resources-no_floors
+# fr55 has 8 colors, only the basic themes are available
+fr55.resourcePath = $(fr55.resourcePath);resources-no_floors;resources-basic_themes
+
+# fr735xt and vivoactive_hr does not have enough memory, load the small font to the place of medium font (Does not necessary the resources-fr735xt if the name is the device name)
+fr735xt.resourcePath = $(fr735xt.resourcePath);resources-basic_themes;resources-no_partial_update
+vivoactive_hr.resourcePath = $(vivoactive_hr.resourcePath);resources-basic_themes;resources-no_partial_update

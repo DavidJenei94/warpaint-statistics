@@ -1,0 +1,10 @@
+<properties>
+
+    <property id="DataField1" type="number">0</property> <!-- HR -> Battery -->
+    <property id="DataField2" type="number">3</property> <!-- Floors_climbed -> Calories-->
+    <property id="DataField3" type="number">5</property> <!-- Distance -->
+    <property id="DataField4" type="number">14</property> <!-- Sunrise_Sunset -> Sunrise -->
+    <property id="DataField5" type="number">15</property> <!-- Calories -> Sunset -->
+    <property id="DataField6" type="number">12</property> <!-- Weather -> RemainingDate -->
+
+</properties>

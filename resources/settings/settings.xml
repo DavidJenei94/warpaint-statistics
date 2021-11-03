@@ -147,10 +147,12 @@
 			<listEntry value="6">@Strings.FloorsClimbed</listEntry>
 			<listEntry value="7">@Strings.ActiveMinutesWeek</listEntry>
 			<listEntry value="8">@Strings.Weather</listEntry>
-			<listEntry value="9">@Strings.SystemIndicators</listEntry>
-			<listEntry value="11">@Strings.MoveBar</listEntry>
+			<!-- <listEntry value="9">@Strings.SystemIndicators</listEntry> -->
+			<!-- <listEntry value="11">@Strings.MoveBar</listEntry> -->
 			<listEntry value="12">@Strings.RemainingTime</listEntry>
 			<listEntry value="13">@Strings.MetersClimbed</listEntry>
+			<listEntry value="14">@Strings.Sunrise</listEntry>
+			<listEntry value="15">@Strings.Sunset</listEntry>
 			<listEntry value="-1">@Strings.Off</listEntry>
 		</settingConfig>
 	</setting>	
@@ -165,10 +167,12 @@
 			<listEntry value="6">@Strings.FloorsClimbed</listEntry>
 			<listEntry value="7">@Strings.ActiveMinutesWeek</listEntry>
 			<listEntry value="8">@Strings.Weather</listEntry>
-			<listEntry value="9">@Strings.SystemIndicators</listEntry>	
-			<listEntry value="11">@Strings.MoveBar</listEntry>
+			<!-- <listEntry value="9">@Strings.SystemIndicators</listEntry>	 -->
+			<!-- <listEntry value="11">@Strings.MoveBar</listEntry> -->
 			<listEntry value="12">@Strings.RemainingTime</listEntry>
 			<listEntry value="13">@Strings.MetersClimbed</listEntry>
+			<listEntry value="14">@Strings.Sunrise</listEntry>
+			<listEntry value="15">@Strings.Sunset</listEntry>
 			<listEntry value="-1">@Strings.Off</listEntry>
 		</settingConfig>
 	</setting>	
@@ -183,10 +187,12 @@
 			<listEntry value="6">@Strings.FloorsClimbed</listEntry>
 			<listEntry value="7">@Strings.ActiveMinutesWeek</listEntry>
 			<listEntry value="8">@Strings.Weather</listEntry>
-			<listEntry value="9">@Strings.SystemIndicators</listEntry>
-			<listEntry value="11">@Strings.MoveBar</listEntry>
+			<!-- <listEntry value="9">@Strings.SystemIndicators</listEntry> -->
+			<!-- <listEntry value="11">@Strings.MoveBar</listEntry> -->
 			<listEntry value="12">@Strings.RemainingTime</listEntry>
 			<listEntry value="13">@Strings.MetersClimbed</listEntry>
+			<listEntry value="14">@Strings.Sunrise</listEntry>
+			<listEntry value="15">@Strings.Sunset</listEntry>
 			<listEntry value="-1">@Strings.Off</listEntry>
 		</settingConfig>
 	</setting>
@@ -201,10 +207,12 @@
 			<listEntry value="6">@Strings.FloorsClimbed</listEntry>
 			<listEntry value="7">@Strings.ActiveMinutesWeek</listEntry>
 			<listEntry value="8">@Strings.Weather</listEntry>
-			<listEntry value="9">@Strings.SystemIndicators</listEntry>
-			<listEntry value="11">@Strings.MoveBar</listEntry>
+			<!-- <listEntry value="9">@Strings.SystemIndicators</listEntry> -->
+			<!-- <listEntry value="11">@Strings.MoveBar</listEntry> -->
 			<listEntry value="12">@Strings.RemainingTime</listEntry>
 			<listEntry value="13">@Strings.MetersClimbed</listEntry>
+			<listEntry value="14">@Strings.Sunrise</listEntry>
+			<listEntry value="15">@Strings.Sunset</listEntry>
 			<listEntry value="-1">@Strings.Off</listEntry>
 		</settingConfig>
 	</setting>
@@ -219,10 +227,12 @@
 			<listEntry value="6">@Strings.FloorsClimbed</listEntry>
 			<listEntry value="7">@Strings.ActiveMinutesWeek</listEntry>
 			<listEntry value="8">@Strings.Weather</listEntry>
-			<listEntry value="9">@Strings.SystemIndicators</listEntry>
-			<listEntry value="11">@Strings.MoveBar</listEntry>
+			<!-- <listEntry value="9">@Strings.SystemIndicators</listEntry> -->
+			<!-- <listEntry value="11">@Strings.MoveBar</listEntry> -->
 			<listEntry value="12">@Strings.RemainingTime</listEntry>
 			<listEntry value="13">@Strings.MetersClimbed</listEntry>
+			<listEntry value="14">@Strings.Sunrise</listEntry>
+			<listEntry value="15">@Strings.Sunset</listEntry>
 			<listEntry value="-1">@Strings.Off</listEntry>
 		</settingConfig>
 	</setting>
@@ -237,10 +247,12 @@
 			<listEntry value="6">@Strings.FloorsClimbed</listEntry>
 			<listEntry value="7">@Strings.ActiveMinutesWeek</listEntry>
 			<listEntry value="8">@Strings.Weather</listEntry>
-			<listEntry value="9">@Strings.SystemIndicators</listEntry>
-			<listEntry value="11">@Strings.MoveBar</listEntry>
+			<!-- <listEntry value="9">@Strings.SystemIndicators</listEntry> -->
+			<!-- <listEntry value="11">@Strings.MoveBar</listEntry> -->
 			<listEntry value="12">@Strings.RemainingTime</listEntry>
 			<listEntry value="13">@Strings.MetersClimbed</listEntry>
+			<listEntry value="14">@Strings.Sunrise</listEntry>
+			<listEntry value="15">@Strings.Sunset</listEntry>
 			<listEntry value="-1">@Strings.Off</listEntry>
 		</settingConfig>
 	</setting>
@@ -256,7 +268,7 @@
 			<listEntry value="3">@Strings.Calories</listEntry>
 			<listEntry value="6">@Strings.FloorsClimbed</listEntry>
 			<listEntry value="7">@Strings.ActiveMinutesWeek</listEntry>
-			<listEntry value="11">@Strings.MoveBar</listEntry>
+			<!-- <listEntry value="11">@Strings.MoveBar</listEntry> -->
 			<listEntry value="-1">@Strings.Off</listEntry>
 		</settingConfig>
 	</setting>
@@ -267,7 +279,7 @@
 			<listEntry value="3">@Strings.Calories</listEntry>
 			<listEntry value="6">@Strings.FloorsClimbed</listEntry>
 			<listEntry value="7">@Strings.ActiveMinutesWeek</listEntry>
-			<listEntry value="11">@Strings.MoveBar</listEntry>
+			<!-- <listEntry value="11">@Strings.MoveBar</listEntry> -->
 			<listEntry value="-1">@Strings.Off</listEntry>
 		</settingConfig>
 	</setting>

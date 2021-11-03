@@ -18,7 +18,7 @@ class Seconds {
 	//! @param dc Device Content
 	function drawSeconds(dc as Dc) as Void {	
 		var secondsString = System.getClockTime().sec.toString();
-		dc.setColor(themeColors[:foregroundPrimaryColor], themeColors[:backgroundColor]);
+		dc.setColor(themeColors[:foregroundPrimaryColor], Graphics.COLOR_TRANSPARENT);
         dc.drawText(
             _x,
             _y, 
@@ -32,7 +32,6 @@ class Seconds {
 	//! onPartialUpdate to update only the seconds region every seconds
 	//! @param dc Device context
 	//! @return Array of x, y, width, height of bounding box 
-	(:partial_update)
 	function getSecondsBoundingBox(dc as Dc) as Array<Number> {
 		var seconds = System.getClockTime().sec;
 		// get the wider region in pixels of the current or the previous second

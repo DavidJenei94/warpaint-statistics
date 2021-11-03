@@ -139,6 +139,18 @@ class Data {
 					values[:displayData] = nextSunriseSunset[0] == -1 ? _errorDisplay : nextSunriseSunset[0];
 					values[:iconText] = nextSunriseSunset[1] ? "E" : "F";
 					values[:iconColor] = Graphics.COLOR_YELLOW;
+					break;	
+				case DATA_SUNRISE:
+					var nextSunrise = getNextSunriseTime();
+					values[:displayData] = nextSunrise[0] == -1 ? _errorDisplay : nextSunrise[0];
+					values[:iconText] = "E";
+					values[:iconColor] = Graphics.COLOR_YELLOW;
+					break;						
+				case DATA_SUNSET:
+					var nextSunset = getNextSunsetTime();
+					values[:displayData] = nextSunset[0] == -1 ? _errorDisplay : nextSunset[0];
+					values[:iconText] = "F";
+					values[:iconColor] = Graphics.COLOR_YELLOW;
 					break;						
 				case DATA_OFF:
 					values[:valid] = false;
@@ -479,7 +491,21 @@ class Data {
 	//! Get the next sunrise or sunset
 	//! @return the next sunrise or sunset according to which is the next
 	(:sunriseSunset)	
-    private function getNextSunriseSunsetTime() as String {
+    private function getNextSunriseSunsetTime() as Array<String or Boolean> {
     	return sunriseSunset.getNextSunriseSunset(_deviceSettings);
+	}
+
+	//! Get the next sunrise
+	//! @return the next sunrise
+	(:sunriseSunset)	
+    private function getNextSunriseTime() as Array<String or Boolean> {
+    	return sunriseSunset.getNextSunrise(_deviceSettings);
+	}
+
+	//! Get the next sunset
+	//! @return the next sunset
+	(:sunriseSunset)	
+    private function getNextSunsetTime() as Array<String or Boolean> {
+    	return sunriseSunset.getNextSunset(_deviceSettings);
 	}
 }

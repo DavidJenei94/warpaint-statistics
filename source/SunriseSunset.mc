@@ -12,8 +12,8 @@ class SunriseSunset {
 
 	(:sunriseSunset) private var _databarWidth as Integer;
 
-	(:sunriseSunset) private var _sunrise as Number; // in hour, eg. 8.23
-	(:sunriseSunset) private var _sunset as Number;
+	(:sunriseSunset) private var _sunrise as Float; // in hour, eg. 8.23
+	(:sunriseSunset) private var _sunset as Float;
 	(:sunriseSunset) private var _hour as Number;
 	(:sunriseSunset) private var _min as Number;
 
@@ -58,6 +58,10 @@ class SunriseSunset {
 	//! @return array of the next sunrise in string and true (as it is sunrise)
 	(:sunriseSunset)
     function getNextSunrise(settings as DeviceSettings) as Array<Number or String or Boolean> {
+		if (!_successfulCalculation) {
+			return [-1, true];
+		}
+
     	return [formatHoursToTimeString(_sunrise, settings), true];
     }
 
@@ -66,6 +70,10 @@ class SunriseSunset {
 	//! @return array of the next sunset in string and false (as it is not sunrise)
 	(:sunriseSunset)
     function getNextSunset(settings as DeviceSettings) as Array<Number or String or Boolean> {
+		if (!_successfulCalculation) {
+			return [-1, false];
+		}
+
     	return [formatHoursToTimeString(_sunset, settings), false];
     }
     
@@ -322,7 +330,13 @@ class SunriseSunset {
 		if (sunriseSunsetDrawingEnabled || 
 			selectedValueForDataField1 == DATA_SUNRISE_SUNSET || selectedValueForDataField2 == DATA_SUNRISE_SUNSET || 
 			selectedValueForDataField3 == DATA_SUNRISE_SUNSET || selectedValueForDataField4 == DATA_SUNRISE_SUNSET || 
-			selectedValueForDataField5 == DATA_SUNRISE_SUNSET || selectedValueForDataField6 == DATA_SUNRISE_SUNSET) {
+			selectedValueForDataField5 == DATA_SUNRISE_SUNSET || selectedValueForDataField6 == DATA_SUNRISE_SUNSET ||
+			selectedValueForDataField1 == DATA_SUNRISE || selectedValueForDataField2 == DATA_SUNRISE || 
+			selectedValueForDataField3 == DATA_SUNRISE || selectedValueForDataField4 == DATA_SUNRISE || 
+			selectedValueForDataField5 == DATA_SUNRISE || selectedValueForDataField6 == DATA_SUNRISE ||
+			selectedValueForDataField1 == DATA_SUNSET || selectedValueForDataField2 == DATA_SUNSET || 
+			selectedValueForDataField3 == DATA_SUNSET || selectedValueForDataField4 == DATA_SUNSET || 
+			selectedValueForDataField5 == DATA_SUNSET || selectedValueForDataField6 == DATA_SUNSET) {
 			
 			checkSunriseSunsetRefreshNeed();
 		}

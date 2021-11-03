@@ -162,6 +162,8 @@
 	<string id="MoveBar">Move Bar</string>
 	<string id="RemainingTime">Remaining days to selected date</string>
 	<string id="MetersClimbed">Meters Climbed</string>
+	<string id="Sunrise">Sunrise</string>
+	<string id="Sunset">Sunset</string>
 	<string id="Off">Off</string>
 
     <string id="SunriseSunsetDrawingTitle">Sunrise and Sunset around watchface</string>
