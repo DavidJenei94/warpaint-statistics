@@ -8,7 +8,6 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
 
     private var viewDrawables = {};
 	private var _isAwake as Boolean;
-	private var _seconds as Seconds;
     private var _partialUpdatesAllowed as Boolean;
 
     private var _data as Data;
@@ -38,8 +37,6 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
     function onLayout(dc as Dc) as Void {
         setLayout(Rez.Layouts.WatchFaceLeft(dc));
         loadDrawables();
-
-        _seconds = new Seconds(dc);
     }
 
     //! Load drawables
@@ -47,6 +44,7 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
         viewDrawables[:hourText] = View.findDrawableById("Hour");
         viewDrawables[:minuteText] = View.findDrawableById("Minute");
         viewDrawables[:AmPmText] = View.findDrawableById("AmPm");
+        viewDrawables[:seconds] = View.findDrawableById("SecondsLabel");
 		if (_burnInProtection) {
 			viewDrawables[:hourTextLeft] = View.findDrawableById("AlwaysOnHourLeft");
 			viewDrawables[:minuteTextLeft] = View.findDrawableById("AlwaysOnMinuteLeft");
@@ -149,7 +147,7 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
 					// If this device supports partial updates
 					onPartialUpdate(dc);
 				} else if (_isAwake && displaySecond != 0) {
-					_seconds.drawSeconds(dc);
+					viewDrawables[:seconds].drawSeconds(dc);
 				}
 			}
         }
@@ -160,14 +158,14 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
 	(:partial_update)
     public function onPartialUpdate(dc as Dc) as Void {
 		if (displaySecond == 2 && System.getClockTime().sec != 0) {
-            var secondsBoundingBox = _seconds.getSecondsBoundingBox(dc);
+            var secondsBoundingBox = viewDrawables[:seconds].getSecondsBoundingBox(dc);
         
             // Set clip to the region of bounding box and which only updates that
             dc.setClip(secondsBoundingBox[0], secondsBoundingBox[1], secondsBoundingBox[2], secondsBoundingBox[3]);
             dc.setColor(themeColors[:foregroundPrimaryColor], themeColors[:backgroundColor]);
             dc.clear();
 
-            _seconds.drawSeconds(dc);
+            viewDrawables[:seconds].drawSeconds(dc);
             
             dc.clearClip();
 

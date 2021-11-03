@@ -2,17 +2,19 @@ import Toybox.WatchUi;
 import Toybox.System;
 import Toybox.Graphics;
 
-class Seconds {
+// Extend text to set as drawable text
+class Seconds extends WatchUi.Text {
 
-    private var _x as Number;
-    private var _y as Number;
+    private var _x as Float;
+    private var _y as Float;
 
     //! Constructor
-    //! @param dc Device Content
-    function initialize(dc as Dc) {
-        _x = dc.getWidth() * 0.32;
-        _y = dc.getHeight() * 0.81;
-    }
+	//! @param params in the layout.xml the drawable object's param tags
+	function initialize(params) {
+		Text.initialize(params);
+		_x = params[:locX];
+		_y = params[:locY];
+	}
 
     //! Draw the seconds after the time
 	//! @param dc Device Content
