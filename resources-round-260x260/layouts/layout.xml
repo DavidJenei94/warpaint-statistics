@@ -1,100 +1,202 @@
-<layout id="WatchFaceLeft">
-	<drawable class="Background" />
-	
-	<drawable class="Time" id="Hour">
-		<param name="locX">dc.getWidth() * 0.32</param>
-		<param name="locY">dc.getHeight() * 0.35</param>
-		<param name="font">largeFont</param>
-		<param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
-	</drawable>
-	<drawable class="Time" id="Minute">
-		<param name="locX">dc.getWidth() * 0.32</param>
-		<param name="locY">dc.getHeight() * 0.63</param>
-		<param name="font">largeFont</param>
-		<param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
-	</drawable>
-	<drawable class="Time" id="AmPm">
-		<param name="locX">dc.getWidth() * 0.32</param>
-		<param name="locY">dc.getHeight() * 0.20</param>
-		<param name="font">smallFont</param>
-		<param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
-	</drawable>
-	<drawable class="Seconds" id="SecondsLabel">
-		<param name="locX">dc.getWidth() * 0.32</param>
-		<param name="locY">dc.getHeight() * 0.81</param>
-	</drawable>
+<resources>
+	<layout id="WatchFaceLeft">
+		<drawable class="Background" />
+		
+		<drawable class="Time" id="Hour">
+			<param name="locX">dc.getWidth() * 0.32</param>
+			<param name="locY">dc.getHeight() * 0.35</param>
+			<param name="font">largeFont</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
+		<drawable class="Time" id="Minute">
+			<param name="locX">dc.getWidth() * 0.32</param>
+			<param name="locY">dc.getHeight() * 0.63</param>
+			<param name="font">largeFont</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
+		<drawable class="Time" id="AmPm">
+			<param name="locX">dc.getWidth() * 0.32</param>
+			<param name="locY">dc.getHeight() * 0.20</param>
+			<param name="font">smallFont</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
+		<drawable class="Seconds" id="SecondsLabel">
+			<param name="locX">dc.getWidth() * 0.32</param>
+			<param name="locY">dc.getHeight() * 0.81</param>
+		</drawable>
 
-	<drawable class="Date" id="DateLabel">
-		<param name="locX">dc.getWidth() * 0.53</param>
-		<param name="locY">dc.getHeight() * 0.50</param>
-		<param name="font">smallFont</param>
-		<param name="justification">Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER</param>
-	</drawable>
+		<drawable class="Date" id="DateLabel">
+			<param name="locX">dc.getWidth() * 0.53</param>
+			<param name="locY">dc.getHeight() * 0.50</param>
+			<param name="font">smallFont</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
 
-	<drawable class="DataField" id="DataFieldTop">
-		<param name="locX">dc.getWidth() * 0.50</param>
-		<param name="locY">dc.getHeight() * 0.13</param>
-		<param name="font">mediumFont</param>
-		<param name="fixed">true</param>
-		<param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
-	</drawable>
-	<drawable class="DataField" id="DataFieldBottom">
-		<param name="locX">dc.getWidth() * 0.50</param>
-		<param name="locY">dc.getHeight() * 0.87</param>
-		<param name="font">mediumFont</param>
-		<param name="fixed">true</param>
-		<param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
-	</drawable>
-	<drawable class="DataField" id="DataField1">
-		<param name="locX">dc.getWidth() * 0.62</param>
-		<param name="locY">dc.getHeight() * 0.23</param>
-		<param name="font">mediumFont</param>
-		<param name="iconSpace">16</param>
-		<param name="justification">Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER</param>
-	</drawable>
-	<drawable class="DataField" id="DataField2">
-		<param name="locX">dc.getWidth() * 0.62</param>
-		<param name="locY">dc.getHeight() * 0.32</param>
-		<param name="font">mediumFont</param>
-		<param name="iconSpace">16</param>
-		<param name="justification">Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER</param>
-	</drawable>
-	<drawable class="DataField" id="DataField3">
-		<param name="locX">dc.getWidth() * 0.62</param>
-		<param name="locY">dc.getHeight() * 0.41</param>
-		<param name="font">mediumFont</param>
-		<param name="iconSpace">16</param>
-		<param name="justification">Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER</param>
-	</drawable>
-	<drawable class="DataField" id="DataField4">
-		<param name="locX">dc.getWidth() * 0.62</param>
-		<param name="locY">dc.getHeight() * 0.59</param>
-		<param name="font">mediumFont</param>
-		<param name="iconSpace">16</param>
-		<param name="justification">Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER</param>
-	</drawable>
-	<drawable class="DataField" id="DataField5">
-		<param name="locX">dc.getWidth() * 0.62</param>
-		<param name="locY">dc.getHeight() * 0.68</param>
-		<param name="font">mediumFont</param>
-		<param name="iconSpace">16</param>
-		<param name="justification">Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER</param>
-	</drawable>
-	<drawable class="DataField" id="DataField6">
-		<param name="locX">dc.getWidth() * 0.62</param>
-		<param name="locY">dc.getHeight() * 0.77</param>
-		<param name="font">mediumFont</param>
-		<param name="iconSpace">16</param>
-		<param name="justification">Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER</param>
-	</drawable>
+		<drawable class="DataField" id="DataFieldTop">
+			<param name="locX">dc.getWidth() * 0.50</param>
+			<param name="locY">dc.getHeight() * 0.13</param>
+			<param name="font">mediumFont</param>
+			<param name="fixed">true</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
+		<drawable class="DataField" id="DataFieldBottom">
+			<param name="locX">dc.getWidth() * 0.50</param>
+			<param name="locY">dc.getHeight() * 0.87</param>
+			<param name="font">mediumFont</param>
+			<param name="fixed">true</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
+		<drawable class="DataField" id="DataField1">
+			<param name="locX">dc.getWidth() * 0.62</param>
+			<param name="locY">dc.getHeight() * 0.23</param>
+			<param name="font">mediumFont</param>
+			<param name="iconSpace">16</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
+		<drawable class="DataField" id="DataField2">
+			<param name="locX">dc.getWidth() * 0.62</param>
+			<param name="locY">dc.getHeight() * 0.32</param>
+			<param name="font">mediumFont</param>
+			<param name="iconSpace">16</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
+		<drawable class="DataField" id="DataField3">
+			<param name="locX">dc.getWidth() * 0.62</param>
+			<param name="locY">dc.getHeight() * 0.41</param>
+			<param name="font">mediumFont</param>
+			<param name="iconSpace">16</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
+		<drawable class="DataField" id="DataField4">
+			<param name="locX">dc.getWidth() * 0.62</param>
+			<param name="locY">dc.getHeight() * 0.59</param>
+			<param name="font">mediumFont</param>
+			<param name="iconSpace">16</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
+		<drawable class="DataField" id="DataField5">
+			<param name="locX">dc.getWidth() * 0.62</param>
+			<param name="locY">dc.getHeight() * 0.68</param>
+			<param name="font">mediumFont</param>
+			<param name="iconSpace">16</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
+		<drawable class="DataField" id="DataField6">
+			<param name="locX">dc.getWidth() * 0.62</param>
+			<param name="locY">dc.getHeight() * 0.77</param>
+			<param name="font">mediumFont</param>
+			<param name="iconSpace">16</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
 
-	<drawable class="DataBar" id="OuterLeftTopDataBar">
-		<param name="side">DATABAR_OUTER_LEFT_TOP</param>
-		<param name="barWidth">7</param>
-	</drawable>
-	<drawable class="DataBar" id="InnerRightBottomDataBar">
-		<param name="side">DATABAR_INNER_RIGHT_BOTTOM</param>
-		<param name="barWidth">7</param>
-	</drawable>
+		<drawable class="DataBar" id="OuterLeftTopDataBar">
+			<param name="side">DATABAR_OUTER_LEFT_TOP</param>
+			<param name="barWidth">7</param>
+		</drawable>
+		<drawable class="DataBar" id="InnerRightBottomDataBar">
+			<param name="side">DATABAR_INNER_RIGHT_BOTTOM</param>
+			<param name="barWidth">7</param>
+		</drawable>
 
-</layout>
+	</layout>
+
+	<layout id="WatchFaceRight">
+		<drawable class="Background" />
+		
+		<drawable class="Time" id="Hour">
+			<param name="locX">dc.getWidth() * 0.68</param>
+			<param name="locY">dc.getHeight() * 0.35</param>
+			<param name="font">largeFont</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
+		<drawable class="Time" id="Minute">
+			<param name="locX">dc.getWidth() * 0.68</param>
+			<param name="locY">dc.getHeight() * 0.63</param>
+			<param name="font">largeFont</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
+		<drawable class="Time" id="AmPm">
+			<param name="locX">dc.getWidth() * 0.68</param>
+			<param name="locY">dc.getHeight() * 0.20</param>
+			<param name="font">smallFont</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
+		<drawable class="Seconds" id="SecondsLabel">
+			<param name="locX">dc.getWidth() * 0.68</param>
+			<param name="locY">dc.getHeight() * 0.81</param>
+		</drawable>
+
+		<drawable class="Date" id="DateLabel">
+			<param name="locX">dc.getWidth() * 0.47</param>
+			<param name="locY">dc.getHeight() * 0.50</param>
+			<param name="font">smallFont</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_RIGHT | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
+
+		<drawable class="DataField" id="DataFieldTop">
+			<param name="locX">dc.getWidth() * 0.50</param>
+			<param name="locY">dc.getHeight() * 0.13</param>
+			<param name="font">mediumFont</param>
+			<param name="fixed">true</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
+		<drawable class="DataField" id="DataFieldBottom">
+			<param name="locX">dc.getWidth() * 0.50</param>
+			<param name="locY">dc.getHeight() * 0.87</param>
+			<param name="font">mediumFont</param>
+			<param name="fixed">true</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
+		<drawable class="DataField" id="DataField1">
+			<param name="locX">dc.getWidth() * 0.38</param>
+			<param name="locY">dc.getHeight() * 0.23</param>
+			<param name="font">mediumFont</param>
+			<param name="iconSpace">16</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_RIGHT | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
+		<drawable class="DataField" id="DataField2">
+			<param name="locX">dc.getWidth() * 0.38</param>
+			<param name="locY">dc.getHeight() * 0.32</param>
+			<param name="font">mediumFont</param>
+			<param name="iconSpace">16</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_RIGHT | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
+		<drawable class="DataField" id="DataField3">
+			<param name="locX">dc.getWidth() * 0.38</param>
+			<param name="locY">dc.getHeight() * 0.41</param>
+			<param name="font">mediumFont</param>
+			<param name="iconSpace">16</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_RIGHT | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
+		<drawable class="DataField" id="DataField4">
+			<param name="locX">dc.getWidth() * 0.38</param>
+			<param name="locY">dc.getHeight() * 0.59</param>
+			<param name="font">mediumFont</param>
+			<param name="iconSpace">16</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_RIGHT | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
+		<drawable class="DataField" id="DataField5">
+			<param name="locX">dc.getWidth() * 0.38</param>
+			<param name="locY">dc.getHeight() * 0.68</param>
+			<param name="font">mediumFont</param>
+			<param name="iconSpace">16</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_RIGHT | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
+		<drawable class="DataField" id="DataField6">
+			<param name="locX">dc.getWidth() * 0.38</param>
+			<param name="locY">dc.getHeight() * 0.77</param>
+			<param name="font">mediumFont</param>
+			<param name="iconSpace">16</param>
+			<param name="justification">Graphics.TEXT_JUSTIFY_RIGHT | Graphics.TEXT_JUSTIFY_VCENTER</param>
+		</drawable>
+
+		<drawable class="DataBar" id="OuterLeftTopDataBar">
+			<param name="side">DATABAR_OUTER_LEFT_TOP</param>
+			<param name="barWidth">7</param>
+		</drawable>
+		<drawable class="DataBar" id="InnerRightBottomDataBar">
+			<param name="side">DATABAR_INNER_RIGHT_BOTTOM</param>
+			<param name="barWidth">7</param>
+		</drawable>
+	</layout>
+</resources>

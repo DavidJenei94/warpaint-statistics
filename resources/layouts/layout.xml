@@ -97,7 +97,6 @@
             <param name="side">DATABAR_INNER_RIGHT_BOTTOM</param>
             <param name="barWidth">6</param>
         </drawable>
-
     </layout>
 
     <layout id="WatchFaceRight">
