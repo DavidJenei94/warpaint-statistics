@@ -1,2 +1,2 @@
 # warpaint-statistics
-A Garmin Connect IQ watch face that shows many data.
+A Garmin Connect IQ watch face with many data.
