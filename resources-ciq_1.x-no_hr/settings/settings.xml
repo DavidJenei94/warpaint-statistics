@@ -1,5 +1,12 @@
 <settings>
 
+	<setting propertyKey="@Properties.Side" title="@Strings.SideTitle">
+        <settingConfig type="list" readonly="true">
+			<listEntry value="0">@Strings.SideLeft</listEntry>
+            <listEntry value="1">@Strings.SideRight</listEntry>
+		</settingConfig>
+	</setting>
+
 	<setting propertyKey="@Properties.DataField1" title="@Strings.DataField1Title">
 		<settingConfig type="list">
 			<listEntry value="0">@Strings.Battery</listEntry>

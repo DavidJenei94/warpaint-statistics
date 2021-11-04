@@ -124,6 +124,13 @@
         </settingConfig>
     </setting>
 	
+	<setting propertyKey="@Properties.Side" title="@Strings.SideTitle">
+        <settingConfig type="list">
+			<listEntry value="0">@Strings.SideLeft</listEntry>
+            <listEntry value="1">@Strings.SideRight</listEntry>
+		</settingConfig>
+	</setting>
+	
 	<setting propertyKey="@Properties.DisplaySecond" title="@Strings.DisplaySecondTitle">
         <settingConfig type="list">
 			<listEntry value="0">@Strings.DisplaySecondOff</listEntry>

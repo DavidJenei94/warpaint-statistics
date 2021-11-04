@@ -1,0 +1,6 @@
+<resources>
+    <!-- Overwrite original with empty layout -->
+    <layout id="WatchFaceRight"></layout>
+    <layout id="AlwaysOnLeft"></layout>
+    <layout id="AlwaysOnRight"></layout>
+</resources>

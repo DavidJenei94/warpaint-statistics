@@ -124,6 +124,9 @@
     <string id="TropicalLight">Tropical (Light)</string>
     <string id="Tropical">Tropical</string>
 
+    <string id="SideTitle">Side of the clock on watch face</string>
+    <string id="SideLeft">Left Side</string>
+    <string id="SideRight">Right Side</string>
 
     <string id="DisplaySecondTitle">Show Seconds options</string>
     <string id="DisplaySecondOff">Do not show seconds</string>

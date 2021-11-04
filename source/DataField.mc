@@ -70,10 +70,15 @@ class DataField extends WatchUi.Text {
 			dc.setColor(color, Graphics.COLOR_TRANSPARENT);
 		}
 
+		
 		if (_fixed) {
 			dc.drawText(_x, _y, iconFont, iconText, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
 		} else {
-			dc.drawText(_x - _pixelsBetweenIconAndData, _y, iconFont, iconText, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+			if (side == SIDE_LEFT) {
+				dc.drawText(_x - _pixelsBetweenIconAndData, _y, iconFont, iconText, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+			} else if (side == SIDE_RIGHT) {
+				dc.drawText(_x + _pixelsBetweenIconAndData, _y, iconFont, iconText, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+			}
 		}
 	}
 }

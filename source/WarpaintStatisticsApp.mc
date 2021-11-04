@@ -18,6 +18,8 @@ var themeColors = {
     :isColorful => false
 };
 
+var side as Integer;
+
 var displaySecond as Integer;
 
 var selectedValueForDataFieldTop as Integer;
@@ -61,6 +63,11 @@ enum {
     DATA_SUNRISE,
     DATA_SUNSET, //15
     DATA_OFF = -1
+}
+
+enum { 
+    SIDE_LEFT,
+    SIDE_RIGHT
 }
 
 enum { 
@@ -123,6 +130,8 @@ class WarpaintStatisticsApp extends Application.AppBase {
     private function setGlobalVariablesWithStorage() as void {
         theme = Properties.getValue("Theme");
 
+        side = Properties.getValue("Side");
+
         displaySecond = Properties.getValue("DisplaySecond");
 
         selectedValueForDataFieldTop = Properties.getValue("DataFieldTop");
@@ -150,6 +159,8 @@ class WarpaintStatisticsApp extends Application.AppBase {
     (:has_no_storage)
     private function setGlobalVariablesWithoutStorage() as void {
         theme = getApp().getProperty("Theme");
+
+        side = getApp().getProperty("Side");
 
         displaySecond = getApp().getProperty("DisplaySecond");
 

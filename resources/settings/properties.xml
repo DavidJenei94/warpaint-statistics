@@ -2,6 +2,8 @@
 
 	<property id="Theme" type="number">3</property>
 
+    <property id="Side" type="number">0</property>
+
     <property id="DisplaySecond" type="number">1</property> <!-- API dependent -->
 
     <property id="CaloriesGoal" type="number">0</property>

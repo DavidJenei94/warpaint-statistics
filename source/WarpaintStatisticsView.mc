@@ -8,6 +8,7 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
 
     private var viewDrawables = {};
 	private var _isAwake as Boolean;
+	private var _settingsChanged as Boolean;
     private var _partialUpdatesAllowed as Boolean;
 
     private var _data as Data;
@@ -22,6 +23,7 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
         WatchFace.initialize();
         _deviceSettings = System.getDeviceSettings();
         _isAwake = true;
+        _settingsChanged = true;
         _partialUpdatesAllowed = (WatchUi.WatchFace has :onPartialUpdate);
         _data = new Data(_deviceSettings);
 
@@ -35,7 +37,7 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
 
     // Load your resources here
     function onLayout(dc as Dc) as Void {
-        setLayout(Rez.Layouts.WatchFaceLeft(dc));
+        setLayoutInView(dc);
         loadDrawables();
     }
 
@@ -100,8 +102,9 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
             
 		} else {
             // Reload drawables if changed from low power mode in case of AMOLED
-			if (_burnInProtection && _burnInTimeDisplayed) {
-				setLayout(Rez.Layouts.WatchFaceLeft(dc));
+            // Or if settings are changed
+			if ((_burnInProtection && _burnInTimeDisplayed) || _settingsChanged) {
+                setLayoutInView(dc);
 				loadDrawables();
 
 				_burnInTimeDisplayed = false;
@@ -151,6 +154,8 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
 				}
 			}
         }
+
+        _settingsChanged = false;
     }
 
     //! Handle the partial update event - Draw seconds every second
@@ -204,12 +209,23 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
 	//! Reload DeviceSettings when settings are changed
     function onSettingsChanged() as Void {
 		_deviceSettings = System.getDeviceSettings();
+        _settingsChanged = true;
 	}
+
+    //! Set the left or right layout
+    //! @param dc Device context
+    private function setLayoutInView(dc as Dc) as Void {
+        if (side == SIDE_LEFT) {
+            setLayout(Rez.Layouts.WatchFaceLeft(dc));
+        } else if (side == SIDE_RIGHT) {
+            setLayout(Rez.Layouts.WatchFaceRight(dc));
+        }
+    }
 
 	//! Draw To AlwaysOnLayout
 	//! @param dc Device context
 	(:burn_in_protection)
-	function drawAlwaysOn(dc as Dc) as Void {
+	private function drawAlwaysOn(dc as Dc) as Void {
         if (_burnInTimeChanged) {
             // Set settings and BurnInProtection for Time layout
             viewDrawables[:hourTextLeft].setSettings(_deviceSettings);
