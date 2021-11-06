@@ -45,6 +45,11 @@ class SunriseSunset {
     	_hour = clockTime.hour;
     	_min = clockTime.min;
 
+		// Manual value for display purposes
+		if (uatDisplayData) {
+			return ["05:18", true];
+		}
+
     	var currentTime = _hour + _min / 60.0;
     	if (currentTime < _sunrise || currentTime > _sunset) {
     		return [formatHoursToTimeString(_sunrise, settings), true];
@@ -62,6 +67,11 @@ class SunriseSunset {
 			return [-1, true];
 		}
 
+		// Manual value for display purposes
+		if (uatDisplayData) {
+			return ["05:18", true];
+		}
+
     	return [formatHoursToTimeString(_sunrise, settings), true];
     }
 
@@ -72,6 +82,11 @@ class SunriseSunset {
     function getNextSunset(settings as DeviceSettings) as Array<Number or String or Boolean> {
 		if (!_successfulCalculation) {
 			return [-1, false];
+		}
+
+		// Manual value for display purposes
+		if (uatDisplayData) {
+			return ["16:12", false];
 		}
 
     	return [formatHoursToTimeString(_sunset, settings), false];
@@ -102,6 +117,12 @@ class SunriseSunset {
     function drawSunriseSunsetArc(dc as Dc, settings as DeviceSettings) as Void {
 		if (!_successfulCalculation) {
 			return;
+		}
+
+		// Manual value for display purposes
+		if (uatDisplayData) {
+			_sunrise = 5.3;
+			_sunset = 18.2;
 		}
 		
 		// center of arcs = center of round screen
@@ -163,7 +184,20 @@ class SunriseSunset {
 		var clockTime = System.getClockTime();
     	_hour = clockTime.hour;
     	_min = clockTime.min;
+
+		// Manual value for display purposes
+		if (uatDisplayData) {
+			_hour = 4;
+			_min = 57;
+		}
+
     	var currentTime = _hour + _min / 60.0;
+		
+		// Manual value for display purposes
+		if (uatDisplayData) {
+			currentTime = 4.95;
+		}
+		
     	var degree = 180 - (currentTime * (360.0 / 24.0));
     	var radians = Math.toRadians(degree);
     	var distance = arcX - (_databarWidth / 2) + 1; // distance of the center of the sun from the center of screen

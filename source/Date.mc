@@ -24,6 +24,12 @@ class Date extends WatchUi.Text {
 	//! @param dc Device Content
 	private function drawDate(dc as Dc) as Void {
 		var date = getDate();
+
+		// Manual value for display purposes
+		if (uatDisplayData) {
+			date = "WED, NOV 24";
+		}
+
 		self.setColor(themeColors[:foregroundSecondaryColor]);	
         self.setText(date);
 		Text.draw(dc);

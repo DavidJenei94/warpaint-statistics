@@ -20,6 +20,12 @@ class Seconds extends WatchUi.Text {
 	//! @param dc Device Content
 	function drawSeconds(dc as Dc) as Void {	
 		var secondsString = System.getClockTime().sec.toString();
+
+		// Manual value for display purposes
+		if (uatDisplayData) {
+			secondsString = "44";
+		}
+
 		dc.setColor(themeColors[:foregroundPrimaryColor], Graphics.COLOR_TRANSPARENT);
         dc.drawText(
             _x,

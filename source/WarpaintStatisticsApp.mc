@@ -2,6 +2,13 @@ import Toybox.Application;
 import Toybox.Lang;
 import Toybox.WatchUi;
 
+// UAT global data for displays and tests
+var uatLogOnUpdateEllapsedTime = false;
+var uatDisplayData = true;
+var uatLogSunriseSunsetDetails = false;
+var uatLogSunriseSunsetEllapsedTime = false;
+var uatManualLocationSunriseSunset = false;
+
 // global variables
 var myView as View;
 

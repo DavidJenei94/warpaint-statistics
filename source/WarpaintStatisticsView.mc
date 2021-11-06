@@ -75,6 +75,15 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
 
     // Update the view
     function onUpdate(dc as Dc) as Void {
+        var time =  System.getClockTime();
+		System.println("");
+		System.println("onUpdate start time: " + time.hour + ":" + time.min + ":" + time.sec);
+		var startTime = null;
+		var currentTime = null;
+		var startTimeFull = null;
+		var currentTimeFull = null;
+		startTimeFull = System.getTimer();
+		if (uatLogOnUpdateEllapsedTime) { startTime = System.getTimer(); }
 
         // Set anti-aliasing if possible
 		if (dc has :setAntiAlias) {
@@ -155,6 +164,14 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
         }
 
         _settingsChanged = false;
+
+        if (uatLogOnUpdateEllapsedTime) {
+            currentTime = System.getTimer();
+            System.println("onUpdate Ellapsed time: " + (currentTime - startTime) + " ms");
+        }
+
+        currentTimeFull = System.getTimer();
+        System.println("Full Ellapsed time: " + (currentTimeFull - startTimeFull) + " ms\n");
     }
 
     //! Handle the partial update event - Draw seconds every second

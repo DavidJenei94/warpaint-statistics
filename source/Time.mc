@@ -45,8 +45,10 @@ class Time extends WatchUi.Text {
         }
 		var hoursString = hours.format("%02d");
 
-		// manual testing:
-		// hoursString = "04";
+		// Manual value for display purposes
+		if (uatDisplayData) {
+			hoursString = "04";
+		}
 
 		if (_burnInProtection) {
 			self.setColor(Graphics.COLOR_WHITE);
@@ -62,8 +64,10 @@ class Time extends WatchUi.Text {
 	function drawMinute(dc as Dc) as Void {
 		var minutesString = _clockTime.min.format("%02d");
 		
-		// manual testing:
-		// minutesString = "44";
+		// Manual value for display purposes
+		if (uatDisplayData) {
+			minutesString = "57";
+		}
 
 		if (_burnInProtection) {
 			self.setColor(Graphics.COLOR_WHITE);
@@ -79,6 +83,12 @@ class Time extends WatchUi.Text {
 	function drawAmPm(dc as Dc) as Void {
 		if (!_settings.is24Hour) {
 			var AmPmString = _clockTime.hour >= 12 ? "PM" : "AM";
+
+			// Manual value for display purposes
+			if (uatDisplayData) {
+				AmPmString = "AM";
+			}
+
 			self.setColor(themeColors[:foregroundSecondaryColor]);
 			self.setText(AmPmString);
 			Text.draw(dc);
