@@ -4,7 +4,7 @@
 
     <property id="Side" type="number">0</property>
 
-    <property id="DisplaySecond" type="number">1</property> <!-- API dependent -->
+    <property id="DisplaySecond" type="number">0</property> <!-- API dependent -->
 
     <property id="CaloriesGoal" type="number">0</property>
     
@@ -19,7 +19,7 @@
     <property id="RemainingTimeToDate" type="number">1640995200</property>
 
     <property id="DataBarOuterLeftTop" type="number">0</property>
-    <property id="DataBarInnerRightBottom" type="number">0</property>
+    <property id="DataBarInnerRightBottom" type="number">1</property>
     <property id="SunriseSunsetDrawing" type="boolean">false</property>  <!-- Watch screen shape dependent-->
     <property id="DataBarSplit" type="number">0</property>
 

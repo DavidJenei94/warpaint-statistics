@@ -1,6 +1,5 @@
 import Toybox.Application;
 import Toybox.Graphics;
-import Toybox.Lang;
 import Toybox.WatchUi;
 
 class Background extends WatchUi.Drawable {

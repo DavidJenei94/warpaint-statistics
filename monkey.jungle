@@ -56,6 +56,11 @@ fenixchronos.excludeAnnotations = $(fenixchronos.excludeAnnotations);partial_upd
 venusq.excludeAnnotations = $(venusq.excludeAnnotations);partial_update
 venusqm.excludeAnnotations = $(venusqm.excludeAnnotations);partial_update
 
+d2air.excludeAnnotations = $(d2air.excludeAnnotations);partial_update
+venu.excludeAnnotations = $(venu.excludeAnnotations);partial_update
+venu2.excludeAnnotations = $(venu2.excludeAnnotations);partial_update
+venu2s.excludeAnnotations = $(venu2s.excludeAnnotations);partial_update
+venud.excludeAnnotations = $(venud.excludeAnnotations);partial_update
 
 # devices lower than CIQ 3.2.0 have no Weather
 # 2.4.0

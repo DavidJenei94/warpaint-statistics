@@ -198,4 +198,35 @@
 			<param name="barWidth">10</param>
 		</drawable>
 	</layout>
+
+    <!-- Used for AMOLED watches when not awake -->
+    <layout id="AlwaysOnLeft">
+        <drawable class="Time" id="AlwaysOnHourLeft">
+            <param name="locX">dc.getWidth() * 0.28</param>
+            <param name="locY">dc.getHeight() * 0.35</param>
+            <param name="font">largeFont</param>
+            <param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
+        </drawable>
+        <drawable class="Time" id="AlwaysOnMinuteLeft">
+            <param name="locX">dc.getWidth() * 0.28</param>
+            <param name="locY">dc.getHeight() * 0.63</param>
+            <param name="font">largeFont</param>
+            <param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
+        </drawable>
+    </layout>
+
+    <layout id="AlwaysOnRight">
+        <drawable class="Time" id="AlwaysOnHourRight">
+            <param name="locX">dc.getWidth() * 0.72</param>
+            <param name="locY">dc.getHeight() * 0.35</param>
+            <param name="font">largeFont</param>
+            <param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
+        </drawable>
+        <drawable class="Time" id="AlwaysOnMinuteRight">
+            <param name="locX">dc.getWidth() * 0.72</param>
+            <param name="locY">dc.getHeight() * 0.63</param>
+            <param name="font">largeFont</param>
+            <param name="justification">Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER</param>
+        </drawable>
+    </layout>
 </resources>
