@@ -98,7 +98,7 @@ class SunriseSunset {
 	//! only for round screens and only for outer circle
 	//! @param dc as Device Content
 	//! @param settings DeviceSettings
-	(:roundShape)
+	(:roundShapeSunriseSunset)
     function drawSunriseSunsetArc(dc as Dc, settings as DeviceSettings) as Void {
 		if (!_successfulCalculation) {
 			return;
@@ -237,7 +237,7 @@ class SunriseSunset {
 	//! @param distance the distance of the center of the sun from the middle of screen
 	//! @param dc Device context
 	//! @return array of adjusted original x, y coordinates
-    (:roundShape)
+	(:roundShapeSunriseSunset)
 	private function xyCorrection(x, y, distance, dc) as Array<Number> {
     	var coordinates = new [2];
     	var xOriginal = x;

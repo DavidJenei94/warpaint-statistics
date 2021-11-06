@@ -2,10 +2,10 @@
 fileVersion=1
 
 # font settings
-fontName=Warpaintmotivationicons
+fontName=Edo SZ
 fontFile=
 charSet=0
-fontSize=38
+fontSize=1
 aa=1
 scaleH=100
 useSmoothing=1
@@ -54,6 +54,6 @@ invB=0
 outlineThickness=0
 
 # selected chars
-chars=65-90
+chars=32
 
 # imported icon images

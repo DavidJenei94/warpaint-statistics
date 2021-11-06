@@ -1,0 +1,7 @@
+<fonts>
+	<font id="SmallFont" filename="edo_sz_text_18.fnt" antialias="false"/>
+	<font id="MediumFont" filename="edo_sz_empty.fnt" antialias="false" filter=""/>
+	<font id="LargeFont" filename="edo_sz_time_81.fnt" antialias="false" filter="0123456789:"/>
+	
+	<font id="IconFont" filename="warpaint_icons_20.fnt" antialias="false" filter="ABCDEFIJSTUVWZ"/>
+</fonts>

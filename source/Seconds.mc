@@ -33,7 +33,8 @@ class Seconds extends WatchUi.Text {
 	//! Gets the bounding box of the seconds to be able to use in 
 	//! onPartialUpdate to update only the seconds region every seconds
 	//! @param dc Device context
-	//! @return Array of x, y, width, height of bounding box 
+	//! @return Array of x, y, width, height of bounding box
+	(:partial_update)
 	function getSecondsBoundingBox(dc as Dc) as Array<Number> {
 		var seconds = System.getClockTime().sec;
 		// get the wider region in pixels of the current or the previous second
