@@ -228,7 +228,7 @@ class Data {
 					}
 					
 					values[:iconColor] = Graphics.COLOR_YELLOW;
-					break;	
+					break;
 				case DATA_SUNRISE:
 					var nextSunrise = getNextSunriseTime();
 					values[:displayData] = nextSunrise[0] == -1 ? _errorDisplay : nextSunrise[0];
@@ -380,6 +380,7 @@ class Data {
     //API 2.1.0
 	//! get active minutes for current week
     //! @return array of active minutes done and active minutes goal  
+	(:activeMinutes)
     private function getActiveMinutesWeek() as Array<Number> {
     	if (_info has :activeMinutesWeek) {
 	    	var activeMinutesWeek = _info.activeMinutesWeek != null ? _info.activeMinutesWeek.total : -1;

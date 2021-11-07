@@ -2,6 +2,8 @@
 
     <string id="AppName">Warpaint Statistics</string>
 
+    <string id="AppVersionTitle">Warpaint Statistics version</string>
+
 	<string id="ThemeTitle">Theme</string>
 
     <!-- Basic color themes -->

@@ -1,0 +1,103 @@
+<strings>
+
+    <!-- Extra themes 1 (45) -->    
+    <string id="BloomingDark"></string>
+    <string id="BloomingLight"></string>
+    <string id="Blooming"></string>
+    <string id="ElegantLight"></string>
+    <string id="Elegant"></string>
+    <string id="BubblegumDark"></string>
+    <string id="BubblegumLight"></string>
+    <string id="Bubblegum"></string>
+    <string id="SavageDark"></string>
+    <string id="SavageLight"></string>
+    <string id="TrustDark"></string>
+    <string id="TrustLight"></string>
+    <string id="Trust"></string>
+    <string id="ImaginationDark"></string>
+    <string id="Imagination"></string>
+    <string id="NatureDark"></string>
+    <string id="NatureLight"></string>
+    <string id="Nature"></string>
+    <string id="LustDark"></string>
+    <string id="LustLight"></string>
+    <string id="Lust"></string>
+    <string id="SweetDark"></string>
+    <string id="SweetLight"></string>
+    <string id="Sweet"></string>
+    <string id="MoonlightDark"></string>
+    <string id="Moonlight"></string>
+    <string id="LuxuryDark"></string>
+    <string id="Luxury"></string>
+    <string id="CaptivatingDark"></string>
+    <string id="Captivating"></string>
+    <string id="ChristmasDark"></string>
+    <string id="ChristmasLight"></string>
+    <string id="Christmas"></string>
+    <string id="CheerfulDark"></string>
+    <string id="CheerfulLight"></string>
+    <string id="Cheerful"></string>
+    <string id="RaptureDark"></string>
+    <string id="RaptureLight"></string>
+    <string id="Rapture"></string>
+    <string id="WildernessDark"></string>
+    <string id="WildernessLight"></string>
+    <string id="Wilderness"></string>
+    <string id="NebulaDark"></string>
+    <string id="NebulaLight"></string>
+    <string id="Nebula"></string>
+    <!-- Extra themes 2 (43) -->
+    <string id="CopperDark"></string>
+    <string id="CopperLight"></string>
+    <string id="Copper"></string>
+    <string id="BreezeDark"></string>
+    <string id="BreezeLight"></string>
+    <string id="Breeze"></string>
+    <string id="AdventureDark"></string>
+    <string id="AdventureLight"></string>
+    <string id="InspirationDark"></string>
+    <string id="Inspiration"></string>
+    <string id="IlluminationDark"></string>
+    <string id="Illumination"></string>
+    <string id="CoastDark"></string>
+    <string id="CoastLight"></string>
+    <string id="Coast"></string>
+    <string id="FreedomDark"></string>
+    <string id="FreedomLight"></string>
+    <string id="Freedom"></string>
+    <string id="GraceDark"></string>
+    <string id="GraceLight"></string>
+    <string id="Grace"></string>
+    <string id="ExuberanceDark"></string>
+    <string id="ExuberanceLight"></string>
+    <string id="Exuberance"></string>
+    <string id="VitalityDark"></string>
+    <string id="VitalityLight"></string>
+    <string id="Vitality"></string>
+    <string id="CozyDark"></string>
+    <string id="CozyLight"></string>
+    <string id="VerdantDark"></string>
+    <string id="Verdant"></string>
+    <string id="ExcitementDark"></string>
+    <string id="Excitement"></string>
+    <string id="StimulationDark"></string>
+    <string id="StimulationLight"></string>
+    <string id="Stimulation"></string>
+    <string id="BlazingDark"></string>
+    <string id="Blazing"></string>
+    <string id="AliveDark"></string>
+    <string id="Alive"></string>
+    <string id="TropicalDark"></string>
+    <string id="TropicalLight"></string>
+    <string id="Tropical"></string>
+
+
+	<string id="FloorsClimbed"></string>
+	<string id="ActiveMinutesWeek"></string>
+	<string id="Weather"></string>
+	<string id="SystemIndicators"></string>
+	<string id="MoveBar"></string>
+	<string id="MetersClimbed"></string>
+
+
+</strings>

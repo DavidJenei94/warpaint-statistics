@@ -1,0 +1,5 @@
+<fonts>
+	<font id="MediumFont" filename="edo_sz_empty.fnt" antialias="false" filter=""/>
+
+	<font id="IconFont" filename="warpaint_icons_20.fnt" antialias="false" filter="ABCDEFIJSTUVWZ"/>
+</fonts>
