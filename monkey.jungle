@@ -41,19 +41,6 @@ fr630.excludeAnnotations = $(fr630.excludeAnnotations);weather;has_storage;parti
 fr920xt.excludeAnnotations = $(fr920xt.excludeAnnotations);weather;has_storage;partial_update;standardThemes;extraThemes;burn_in_protection;roundShapeSunriseSunset;activeMinutes;floorsClimbed
 vivoactive.excludeAnnotations = $(vivoactive.excludeAnnotations);weather;has_storage;partial_update;standardThemes;extraThemes;burn_in_protection;roundShapeSunriseSunset;activeMinutes;floorsClimbed
 
-# CIQ 1.x watches have No Floors, Active Minutes support and Weather
-# Some of them have no HR support either
-# Low memory devices exclude some hardcoded motivational quotes to save memory (mainly 1.4.0 round watches because they have sunrise sunset)
-d2bravo.resourcePath = $(d2bravo.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x-no_hr;resources-round-ciq_1.x
-d2bravo_titanium.resourcePath = $(d2bravo_titanium.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x;resources-round-ciq_1.x
-fenix3.resourcePath = $(fenix3.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x-no_hr;resources-round-ciq_1.x
-fenix3_hr.resourcePath = $(fenix3_hr.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x;resources-round-ciq_1.x
-fr230.resourcePath = $(fr230.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x-no_hr
-fr235.resourcePath = $(fr235.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x
-fr630.resourcePath = $(fr630.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x-no_hr
-fr920xt.resourcePath = $(fr920xt.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x-no_hr
-vivoactive.resourcePath = $(vivoactive.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x-no_hr
-
 
 # Exclude weather annotation on devices lower than CIQ 3.2.0 too
 # 2.4.0
@@ -90,6 +77,20 @@ venu.excludeAnnotations = $(venu.excludeAnnotations);partial_update
 venu2.excludeAnnotations = $(venu2.excludeAnnotations);partial_update
 venu2s.excludeAnnotations = $(venu2s.excludeAnnotations);partial_update
 venud.excludeAnnotations = $(venud.excludeAnnotations);partial_update
+
+
+# CIQ 1.x watches have No Floors, Active Minutes support and Weather
+# Some of them have no HR support either
+# Low memory devices exclude some hardcoded motivational quotes to save memory (mainly 1.4.0 round watches because they have sunrise sunset)
+d2bravo.resourcePath = $(d2bravo.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x-no_hr;resources-round-ciq_1.x;resources-left_side
+d2bravo_titanium.resourcePath = $(d2bravo_titanium.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x;resources-round-ciq_1.x;resources-left_side
+fenix3.resourcePath = $(fenix3.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x-no_hr;resources-round-ciq_1.x;resources-left_side
+fenix3_hr.resourcePath = $(fenix3_hr.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x;resources-round-ciq_1.x;resources-left_side
+fr230.resourcePath = $(fr230.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x-no_hr
+fr235.resourcePath = $(fr235.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x
+fr630.resourcePath = $(fr630.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x-no_hr
+fr920xt.resourcePath = $(fr920xt.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x-no_hr
+vivoactive.resourcePath = $(vivoactive.resourcePath);resources-basic_themes;resources-no_partial_update;resources-ciq_1.x-no_hr
 
 # devices lower than CIQ 3.2.0 have no Weather
 # 2.4.0
