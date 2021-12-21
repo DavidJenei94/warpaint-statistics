@@ -47,6 +47,8 @@ Motivational, Inspirational, Data, Information, Stylish, Original, Creative, Cus
 
 ## What's New
 
+### 1.0.1
+- Update Venu sq and Venu sq music layout
 ### 1.0.0
 - Public release.
 
