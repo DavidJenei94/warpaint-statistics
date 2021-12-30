@@ -47,6 +47,9 @@ Motivational, Inspirational, Data, Information, Stylish, Original, Creative, Cus
 
 ## What's New
 
+### 1.0.2
+- Add option to change Top and Bottom data field
+- Fix issue: property without settings
 ### 1.0.1
 - Update Venu sq and Venu sq music layout
 ### 1.0.0

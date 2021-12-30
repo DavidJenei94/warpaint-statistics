@@ -139,6 +139,8 @@
 	<string id="CaloriesGoalPrompt">Valid value between 0 and 10000. 0 will trigger automatic average calculation</string>
 	<string id="CaloriesGoalError">Values accepted only between 0 and 10000</string>
 
+    <string id="DataFieldTopTitle">Data Field Top</string>
+    <string id="DataFieldBottomTitle">Data Field Bottom</string>
     <string id="DataField1Title">Data Field 1</string>
     <string id="DataField2Title">Data Field 2</string>
     <string id="DataField3Title">Data Field 3</string>
