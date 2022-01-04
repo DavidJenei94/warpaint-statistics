@@ -47,6 +47,8 @@ Motivational, Inspirational, Data, Information, Stylish, Original, Creative, Cus
 
 ## What's New
 
+### 1.0.3
+- Add Venu 2 Plus support
 ### 1.0.2
 - Add option to change Top and Bottom data field
 - Fix issue: property without settings
