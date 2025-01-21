@@ -52,6 +52,8 @@ Motivational, Inspirational, Data, Information, Stylish, Original, Creative, Cus
 
 ## What's New
 
+### 2.0.1
+- Weather bug fix
 ### 2.0.0
 - Update to new Connect SDK
 - Add Approach® S70 42mm, Approach® S70 47mm, Descent™ Mk3 43mm / Mk3i 43mm, Descent™ Mk3i 51mm, epix™ Pro (Gen 2) 42mm, epix™ Pro (Gen 2) 47mm / quatix® 7 Pro, epix™ Pro (Gen 2) 51mm / D2™ Mach 1 Pro / tactix® 7 – AMOLED Edition, fēnix® 7 Pro, fēnix® 7 Pro - Solar Edition (no Wi-Fi), fēnix® 7S Pro, fēnix® 7X Pro, fēnix® 7X Pro - Solar Edition (no Wi-Fi), Forerunner® 165, Forerunner® 165 Music, Forerunner® 265, Forerunner® 265s, Forerunner® 965, MARQ® (Gen 2) Athlete / Adventurer / Captain / Golfer / Carbon Edition / Commander - Carbon Edition, MARQ® (Gen 2) Aviator, Venu® 3, Venu® 3S, vívoactive® 5, Enduro™ 3, fēnix® 8 43mm, fēnix® 8 47mm / 51mm, fēnix® 8 Solar 47mm, fēnix® 8 Solar 51mm, fēnix® E

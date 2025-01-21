@@ -310,7 +310,7 @@ class Data {
     //! @return array of temperature according to device settings and condition for icon
 	(:weather)
     private function getCurrentWeather() as Array<Number or String> {
-    	if (Application has :Weather) {
+    	if (Toybox has :Weather) {
     		var currentCondition = Weather.getCurrentConditions();
 			if (currentCondition != null) {
 				var condition = " ";
