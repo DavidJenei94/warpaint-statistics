@@ -5,12 +5,13 @@ import Toybox.Time;
 import Toybox.Time.Gregorian;
 import Toybox.Weather;
 import Toybox.Graphics;
+import Toybox.Lang;
 
 class Data {
 
-	private var _info as ActivityMonitor.Info;
-	private var _userProfile as UserProfile.Profile;
-	private var _deviceSettings as System.DeviceSettings;
+	private var _info as ActivityMonitor.Info?;
+	private var _userProfile as UserProfile.Profile?;
+	private var _deviceSettings as System.DeviceSettings?;
 	
 	private var _errorDisplay = "--";
 	
@@ -79,7 +80,7 @@ class Data {
 					break;
 				case DATA_FLOORS_CLIMBED:
 					var floorsClimbed = getFloorsClimbed();
-					values[:currentData] = floorsClimbed[0];
+					values[:currentData] = floorsClimbed[0] == null ? -1 : floorsClimbed[0];
 					values[:displayData] = values[:currentData] == -1 ? _errorDisplay : values[:currentData].toString();
 					values[:dataMaxValue] = floorsClimbed[1];
 					values[:iconText] = "G";
@@ -88,7 +89,7 @@ class Data {
 					break;
 				case DATA_ACTIVE_MINUTES_WEEK:
 					var activeMinutesWeek = getActiveMinutesWeek();
-					values[:currentData] = activeMinutesWeek[0];
+					values[:currentData] = activeMinutesWeek[0] == null ? -1 : activeMinutesWeek[0];
 					values[:displayData] = values[:currentData] == -1 ? _errorDisplay : values[:currentData].toString();
 					values[:dataMaxValue] = activeMinutesWeek[1];
 					values[:iconText] = "H";
@@ -103,7 +104,7 @@ class Data {
 					break;	
 				case DATA_WEATHER:
 					var weather = getCurrentWeather();
-					values[:displayData] = weather[0] == -1 ? _errorDisplay : weather[0].toString() + "º";  //unicode 186, \u00BA : real degree icon: ° unicode 176;
+					values[:displayData] = weather[0] == -999 ? _errorDisplay : weather[0].toString() + "º";  //unicode 186, \u00BA : real degree icon: ° unicode 176;
 					values[:iconText] = weather[1];
 					values[:iconColor] = Graphics.COLOR_BLUE;
 					break;
@@ -231,7 +232,7 @@ class Data {
     	var heartRate = activityInfo.currentHeartRate;
 		
 		if (heartRate == null) {
-	    	var sample = null;
+            var sample = null as ActivityMonitor.HeartRateSample?;
 	    	
 	    	// Check HR history of the last specified (5) number of samples
 	    	if (ActivityMonitor has :getHeartRateHistory) {
@@ -263,7 +264,7 @@ class Data {
     
 	//! get battery status
     //! @return array of current battery status and maximum battery status
-    private function getBatteryStat() as Array<Number> {
+	private function getBatteryStat() as Array<Float or Number> {
 		var systemStats = System.getSystemStats();
     	return [systemStats.battery, 100];
     }
@@ -313,9 +314,9 @@ class Data {
     		var currentCondition = Weather.getCurrentConditions();
 			if (currentCondition != null) {
 				var condition = " ";
-				var temperature = currentCondition.temperature != null ? currentCondition.temperature : -1;
+				var temperature = currentCondition.temperature != null ? currentCondition.temperature : -999;
 				
-				if (temperature != -1) {
+				if (temperature != -999) {
 					if (_deviceSettings.temperatureUnits == System.UNIT_STATUTE) {
 						temperature = ((temperature * (9.0 / 5)) + 32).toNumber();
 					}
@@ -327,7 +328,7 @@ class Data {
 			}
     	}
 
-    	return [-1, "R"];
+    	return [-999, "R"];
     }
 
 	//! Get weather icon

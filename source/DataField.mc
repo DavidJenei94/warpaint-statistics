@@ -1,10 +1,11 @@
 import Toybox.WatchUi;
 import Toybox.Graphics;
+import Toybox.Lang;
 
 // Extend text to set as drawable text
 class DataField extends WatchUi.Text {
 	
-	private var _selectedValue as Number;
+	private var _selectedValue as Number or Null or Dictionary = null;
 
 	private var _x as Float;
 	private var _y as Float;
@@ -69,7 +70,6 @@ class DataField extends WatchUi.Text {
 		} else {
 			dc.setColor(color, Graphics.COLOR_TRANSPARENT);
 		}
-
 		
 		if (_fixed) {
 			dc.drawText(_x, _y, iconFont, iconText, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);

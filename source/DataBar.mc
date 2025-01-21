@@ -1,12 +1,14 @@
 import Toybox.Graphics;
 import Toybox.WatchUi;
+import Toybox.Lang;
+import Toybox.System;
 
 class DataBar extends WatchUi.Drawable {
 
 	private var _side as Integer;
 	private var _dataBarWidth as Integer;
-	private var _selectedValue as Number;
-	private var _settings as System.DeviceSettings;
+	private var _selectedValue as Number or Null or Dictionary = null;
+	private var _settings as DeviceSettings? = null;
 	
 	//! Constructor
 	//! @param side the side of the bar (outer-left-top or inner-right-bottom)
@@ -58,7 +60,7 @@ class DataBar extends WatchUi.Drawable {
 	//! @param maxValue the maximum value of the data
 	//! @param color the color of the bar
     (:roundShape)    
-    private function drawRoundDataBar(dc as DC, actualValue as Number, maxValue as Number, color as Number) as Void {
+	private function drawRoundDataBar(dc as Dc, actualValue as Number, maxValue as Number, color as Number) as Void {
     	// Do not draw if error occurs in the data
 		if (actualValue == -1) {
     		return;
@@ -140,7 +142,7 @@ class DataBar extends WatchUi.Drawable {
 	//! @param maxValue the maximum value of the data
 	//! @param color the color of the bar
     (:semiroundShape)   
-    private function drawSemiRoundDataBar(dc as DC, actualValue as Number, maxValue as Number, color as Number) as Void {
+    private function drawSemiRoundDataBar(dc as Dc, actualValue as Number, maxValue as Number, color as Number) as Void {
     	// Do not draw if error occurs in the data
 		if (actualValue == -1) {
     		return;
@@ -218,7 +220,7 @@ class DataBar extends WatchUi.Drawable {
 	//! @param angleCorrection plus degree needed because with semiround shape only the corner of arc touches the top/bottom side
 	//! @return the degree according to the current value
     (:semiroundShape)
-	private function getDegreeForActualValueSemi(actual, max, startAngle, endAngle, angleCorrection) {
+	private function getDegreeForActualValueSemi(actual, max, startAngle, endAngle, angleCorrection) as Number {
     	if (actual >= max) {
     		return endAngle;
     	}
@@ -237,7 +239,7 @@ class DataBar extends WatchUi.Drawable {
 	//! @param maxValue the maximum value of the data
 	//! @param color the color of the bar
     (:rectangleShape)
-    private function drawRectangleDataBar(dc as DC, actualValue as Number, maxValue as Number, color as Number) {
+    private function drawRectangleDataBar(dc as Dc, actualValue as Number, maxValue as Number, color as Number) {
     	// Do not draw if error occurs in the data
 		if (actualValue == -1) {
     		return;
@@ -298,7 +300,7 @@ class DataBar extends WatchUi.Drawable {
 	//! Select the databar color according to the theme and side
 	//! @param dc Device Content
 	//! @param color the color of the bar
-	private function selectActualDataBarColor(dc as DC, color as Number) as Void {
+	private function selectActualDataBarColor(dc as Dc, color as Number) as Void {
 		if (_side == DATABAR_INNER_RIGHT_BOTTOM && !themeColors[:isColorful]) {
 			dc.setColor(themeColors[:foregroundSecondaryColor], themeColors[:backgroundColor]);			
 		} else if (_side == DATABAR_OUTER_LEFT_TOP && !themeColors[:isColorful]) {

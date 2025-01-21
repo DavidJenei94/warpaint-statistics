@@ -1,49 +1,50 @@
 import Toybox.Application;
 import Toybox.Lang;
 import Toybox.WatchUi;
+import Toybox.Lang;
 
 // global variables
-var myView as View;
+var myView;
 
-var smallFont as Font;
-var mediumFont as Font;
-var largeFont as Font;
-var iconFont as Font;
+var smallFont;
+var mediumFont;
+var largeFont;
+var iconFont;
 
-var theme as Number;
-var themeColors = {
+var theme as Number = 0;
+var themeColors as Dictionary = {
     :foregroundPrimaryColor => 0xFFFFFF,
     :foregroundSecondaryColor => 0xFFFFFF,
     :backgroundColor => 0x000000,
     :isColorful => false
 };
 
-var side as Integer;
+var side as Integer = 0;
 
-var displaySecond as Integer;
+var displaySecond as Integer = 0;
 
-var selectedValueForDataFieldTop as Integer;
-var selectedValueForDataFieldBottom as Integer;
-var selectedValueForDataField1 as Integer;
-var selectedValueForDataField2 as Integer;
-var selectedValueForDataField3 as Integer;
-var selectedValueForDataField4 as Integer;
-var selectedValueForDataField5 as Integer;
-var selectedValueForDataField6 as Integer;
+var selectedValueForDataFieldTop as Integer = 0;
+var selectedValueForDataFieldBottom as Integer = 0;
+var selectedValueForDataField1 as Integer = 0;
+var selectedValueForDataField2 as Integer = 0;
+var selectedValueForDataField3 as Integer = 0;
+var selectedValueForDataField4 as Integer = 0;
+var selectedValueForDataField5 as Integer = 0;
+var selectedValueForDataField6 as Integer = 0;
 
-var selectedToDate as Number;
+var selectedToDate as Number = 0;
 
-var selectedValueForDataBarOuterLeftTop as Integer;
-var selectedValueForDataBarInnerRightBottom as Integer;
-var dataBarSplit as Integer;
-var sunriseSunsetDrawingEnabled as Boolean;
-var sunriseSunset as SunriseSunset;
+var selectedValueForDataBarOuterLeftTop as Integer = 0;
+var selectedValueForDataBarInnerRightBottom as Integer = 0;
+var dataBarSplit as Integer = 0;
+var sunriseSunsetDrawingEnabled as Boolean = false;
+var sunriseSunset as SunriseSunset? = null;
 
-var totalCaloriesGoal as Number;
+var totalCaloriesGoal as Number = 0;
 
 // Store in storage/property
-var locationLat as Float;
-var locationLng as Float;
+var locationLat as Float = 0.0;
+var locationLng as Float = 0.0;
 
 enum { 
     DATA_BATTERY,  //0 
@@ -97,13 +98,13 @@ class WarpaintStatisticsApp extends Application.AppBase {
     }
 
     // Return the initial view of your application here
-    function getInitialView() as Array<Views or InputDelegates>? {
-        myView = new WarpaintStatisticsView();
+    function getInitialView() as [Views] or [Views, InputDelegates] {
+    	myView = new WarpaintStatisticsView();
         setGlobalVariables();
         Theme.selectThemeColors();
         myView.loadFonts();
         
-        return [ myView ] as Array<Views or InputDelegates>;
+        return [ myView ];
     }
 
     // New app settings have been received so trigger a UI update
@@ -127,7 +128,7 @@ class WarpaintStatisticsApp extends Application.AppBase {
 
     //! Set global variables with storage enabled
     (:has_storage)
-    private function setGlobalVariablesWithStorage() as void {
+    private function setGlobalVariablesWithStorage() as Void {
         theme = Properties.getValue("Theme");
 
         side = Properties.getValue("Side");
@@ -157,7 +158,7 @@ class WarpaintStatisticsApp extends Application.AppBase {
 
     //! Set global variables without storage enabled
     (:has_no_storage)
-    private function setGlobalVariablesWithoutStorage() as void {
+    private function setGlobalVariablesWithoutStorage() as Void {
         theme = getApp().getProperty("Theme");
 
         side = getApp().getProperty("Side");

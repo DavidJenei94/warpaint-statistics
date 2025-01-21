@@ -131,6 +131,28 @@ venu2plus.resourcePath = $(venu2plus.resourcePath);resources-no_partial_update
 venu2s.resourcePath = $(venu2s.resourcePath);resources-no_partial_update
 venud.resourcePath = $(venud.resourcePath);resources-no_partial_update
 epix2.resourcePath = $(epix2.resourcePath);resources-no_partial_update
+venusq2.resourcePath = $(venusq2.resourcePath);resources-no_partial_update
+venusq2m.resourcePath = $(venusq2m.resourcePath);resources-no_partial_update
+approachs7042mm.resourcePath = $(approachs7042mm.resourcePath);resources-no_partial_update
+approachs7047mm.resourcePath = $(approachs7047mm.resourcePath);resources-no_partial_update
+descentmk343mm.resourcePath = $(descentmk343mm.resourcePath);resources-no_partial_update
+descentmk351mm.resourcePath = $(descentmk351mm.resourcePath);resources-no_partial_update
+epix2pro42mm.resourcePath = $(epix2pro42mm.resourcePath);resources-no_partial_update
+epix2pro47mm.resourcePath = $(epix2pro47mm.resourcePath);resources-no_partial_update
+epix2pro51mm.resourcePath = $(epix2pro51mm.resourcePath);resources-no_partial_update
+fr165.resourcePath = $(fr165.resourcePath);resources-no_partial_update
+fr165m.resourcePath = $(fr165m.resourcePath);resources-no_partial_update
+fr265.resourcePath = $(fr265.resourcePath);resources-no_partial_update
+fr265s.resourcePath = $(fr265s.resourcePath);resources-no_partial_update
+fr965.resourcePath = $(fr965.resourcePath);resources-no_partial_update
+marq2.resourcePath = $(marq2.resourcePath);resources-no_partial_update
+marq2aviator.resourcePath = $(marq2aviator.resourcePath);resources-no_partial_update
+venu3.resourcePath = $(venu3.resourcePath);resources-no_partial_update
+venu3s.resourcePath = $(venu3s.resourcePath);resources-no_partial_update
+vivoactive5.resourcePath = $(vivoactive5.resourcePath);resources-no_partial_update
+fenix843mm.resourcePath = $(fenix843mm.resourcePath);resources-no_partial_update
+fenix847mm.resourcePath = $(fenix847mm.resourcePath);resources-no_partial_update
+fenixe.resourcePath = $(fenixe.resourcePath);resources-no_partial_update
 
 
 #  fr245/fr245m, venusq/venusqm, fr55 are CIQ 3.x, but do not support floors climbed.

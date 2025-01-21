@@ -1,6 +1,8 @@
 import Toybox.WatchUi;
 import Toybox.Time;
 import Toybox.Time.Gregorian;
+import Toybox.Lang;
+import Toybox.Graphics;
 
 // Extend text to set as drawable text
 class Date extends WatchUi.Text {
@@ -32,7 +34,7 @@ class Date extends WatchUi.Text {
 	//! Get actual date
 	//! @return formatted date as string
 	private function getDate() as String {
-		var actualDate = Gregorian.info(Gregorian.now(), Time.FORMAT_SHORT);
+		var actualDate = Gregorian.info(Time.now(), Time.FORMAT_SHORT);
         return _dayOfWeeks[(actualDate.day_of_week - 1) % 7] + ", " + _months[actualDate.month - 1] + " " + actualDate.day;
 	}
 }

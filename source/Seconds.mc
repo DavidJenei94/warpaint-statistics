@@ -1,6 +1,7 @@
 import Toybox.WatchUi;
 import Toybox.System;
 import Toybox.Graphics;
+import Toybox.Lang;
 
 // Extend text to set as drawable text
 class Seconds extends WatchUi.Text {
@@ -35,7 +36,7 @@ class Seconds extends WatchUi.Text {
 	//! @param dc Device context
 	//! @return Array of x, y, width, height of bounding box
 	(:partial_update)
-	function getSecondsBoundingBox(dc as Dc) as Array<Number> {
+	function getSecondsBoundingBox(dc as Dc) as Array<Float or Integer> {
 		var seconds = System.getClockTime().sec;
 		// get the wider region in pixels of the current or the previous second
 		var previousSecond = (seconds - 1) % 60;

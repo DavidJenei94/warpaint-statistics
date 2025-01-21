@@ -2,6 +2,7 @@ import Toybox.Application;
 import Toybox.Graphics;
 import Toybox.System;
 import Toybox.WatchUi;
+import Toybox.Lang;
 
 class WarpaintStatisticsView extends WatchUi.WatchFace {
 
@@ -12,9 +13,9 @@ class WarpaintStatisticsView extends WatchUi.WatchFace {
 
     private var _data as Data;
 
-	private var _burnInProtection as Boolean;
-	private var _burnInTimeChanged as Boolean;
-	private var _burnInTimeDisplayed as Boolean;
+	private var _burnInProtection as Boolean = true;
+	private var _burnInTimeChanged as Boolean = false;
+	private var _burnInTimeDisplayed as Boolean = false;
 
 	private var _deviceSettings as System.DeviceSettings;
 

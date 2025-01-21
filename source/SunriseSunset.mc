@@ -5,17 +5,18 @@ import Toybox.Activity;
 import Toybox.Application;
 import Toybox.Application.Storage;
 import Toybox.Graphics;
+import Toybox.Lang;
 
 class SunriseSunset {
 
-	static private var _isSunriseSunsetSet = false;
+	static var _isSunriseSunsetSet = false;
 
-	(:sunriseSunset) private var _databarWidth as Integer;
+	(:sunriseSunset) private var _databarWidth as Integer = 0;
 
-	(:sunriseSunset) private var _sunrise as Float; // in hour, eg. 8.23
-	(:sunriseSunset) private var _sunset as Float;
-	(:sunriseSunset) private var _hour as Number;
-	(:sunriseSunset) private var _min as Number;
+	(:sunriseSunset) private var _sunrise as Float = 0.0; // in hour, eg. 8.23
+	(:sunriseSunset) private var _sunset as Float = 0.0;
+	(:sunriseSunset) private var _hour as Integer = 0;
+	(:sunriseSunset) private var _min as Integer = 0;
 
 	(:sunriseSunset) private var _successfulCalculation as Boolean;
 	

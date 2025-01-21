@@ -1,6 +1,6 @@
 <properties>
 
-	<property id="appVersion" type="string">1.0.5</property>
+	<property id="appVersion" type="string">2.0.0</property>
 
 	<property id="Theme" type="number">3</property>
 
@@ -18,7 +18,7 @@
     <property id="DataField4" type="number">4</property> <!-- Sunrise_Sunset -->
     <property id="DataField5" type="number">3</property> <!-- Calories -->
     <property id="DataField6" type="number">8</property> <!-- Weather -->
-    <property id="RemainingTimeToDate" type="number">1672531200</property>
+    <property id="RemainingTimeToDate" type="number">1767225600</property>
 
     <property id="DataBarOuterLeftTop" type="number">0</property>
     <property id="DataBarInnerRightBottom" type="number">1</property>

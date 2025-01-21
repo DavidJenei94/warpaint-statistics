@@ -1,14 +1,15 @@
 import Toybox.WatchUi;
 import Toybox.System;
 import Toybox.Graphics;
+import Toybox.Lang;
 
 // Extend text to set as drawable text
 class Time extends WatchUi.Text {
 	
-	private var _settings as System.DeviceSettings;
-	private var _burnInProtection as Boolean; //true if amoled is in low power mode
+	private var _settings as System.DeviceSettings? = null;
+	private var _burnInProtection as Boolean = false; //true if amoled is in low power mode
 
-	private var _clockTime as ClockTime;
+	private var _clockTime as ClockTime? = null;
 	
 	//! Constructor
 	//! @param params in the layout.xml the drawable object's param tags
