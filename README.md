@@ -52,6 +52,8 @@ Motivational, Inspirational, Data, Information, Stylish, Original, Creative, Cus
 
 ## What's New
 
+### 2.0.2
+- Add Approach® S50, Instinct® 3 AMOLED 45mm, Instinct® 3 AMOLED 50mm support
 ### 2.0.1
 - Weather bug fix
 ### 2.0.0
