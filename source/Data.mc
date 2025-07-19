@@ -32,7 +32,7 @@ class Data {
 	//! Get the selected data in dataField or dataBar
 	//! @param selectedType selected data type
 	//! @return values dictionary with the data values and settings
-    function getDataForDataField(selectedType as Integer) {
+    function getDataForDataField(selectedType as Integer) as Dictionary {
 		var values = {
 			:currentData => 0,
 			:displayData => _errorDisplay,
@@ -104,7 +104,7 @@ class Data {
 					break;	
 				case DATA_WEATHER:
 					var weather = getCurrentWeather();
-					values[:displayData] = weather[0] == -999 ? _errorDisplay : weather[0].toString() + "º";  //unicode 186, \u00BA : real degree icon: ° unicode 176;
+					values[:displayData] = weather[0] == -999 ? _errorDisplay : weather[0].toNumber().toString() + "º";  //unicode 186, \u00BA : real degree icon: ° unicode 176;
 					values[:iconText] = weather[1];
 					values[:iconColor] = Graphics.COLOR_BLUE;
 					break;

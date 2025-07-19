@@ -153,6 +153,12 @@ vivoactive5.resourcePath = $(vivoactive5.resourcePath);resources-no_partial_upda
 fenix843mm.resourcePath = $(fenix843mm.resourcePath);resources-no_partial_update
 fenix847mm.resourcePath = $(fenix847mm.resourcePath);resources-no_partial_update
 fenixe.resourcePath = $(fenixe.resourcePath);resources-no_partial_update
+descentg2.resourcePath = $(descentg2.resourcePath);resources-no_partial_update
+fr57042mm.resourcePath = $(fr57042mm.resourcePath);resources-no_partial_update
+fr57047mm.resourcePath = $(fr57047mm.resourcePath);resources-no_partial_update
+fr970.resourcePath = $(fr970.resourcePath);resources-no_partial_update
+vivoactive6.resourcePath = $(vivoactive6.resourcePath);resources-no_partial_update
+venux1.resourcePath = $(venux1.resourcePath);resources-no_partial_update
 
 
 #  fr245/fr245m, venusq/venusqm, fr55 are CIQ 3.x, but do not support floors climbed.

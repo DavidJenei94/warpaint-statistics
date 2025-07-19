@@ -5,7 +5,7 @@ import Toybox.Lang;
 // Extend text to set as drawable text
 class DataField extends WatchUi.Text {
 	
-	private var _selectedValue as Number or Null or Dictionary = null;
+	private var _selectedValue as Dictionary? = null;
 
 	private var _x as Float;
 	private var _y as Float;
@@ -24,8 +24,8 @@ class DataField extends WatchUi.Text {
 	}
 
 	//! Set Selected Data
-	//! @param selectedValue the selected datavalue
-	function setSelectedData(selectedValue as Number) as Void {
+	//! @param selectedValue the selected data value
+	function setSelectedData(selectedValue as Dictionary) as Void {
 		_selectedValue = selectedValue;
 	}
 

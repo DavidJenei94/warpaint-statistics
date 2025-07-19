@@ -7,7 +7,7 @@ class DataBar extends WatchUi.Drawable {
 
 	private var _side as Integer;
 	private var _dataBarWidth as Integer;
-	private var _selectedValue as Number or Null or Dictionary = null;
+	private var _selectedValue as Dictionary? = null;
 	private var _settings as DeviceSettings? = null;
 	
 	//! Constructor
@@ -19,8 +19,8 @@ class DataBar extends WatchUi.Drawable {
 	}
 
 	//! Set Selected Data
-	//! @param selectedValue the selected datavalue
-	function setSelectedData(selectedValue as Number) as Void {
+	//! @param selectedValue the selected data value
+	function setSelectedData(selectedValue as Dictionary) as Void {
 		_selectedValue = selectedValue;
 	}
 
