@@ -58,6 +58,10 @@ Motivational, Inspirational, Data, Information, Stylish, Original, Creative, Cus
 
 ## What's New
 
+### 2.0.4
+
+- Add D2™ Mach 2, fēnix® 8 Pro 47mm / 51mm / MicroLED, Venu® 4 41mm, Venu® 4 45mm / D2™ Air X15
+
 ### 2.0.3
 
 - Add Descent™ G2, Forerunner® 570 42mm, Forerunner® 570 47mm, Forerunner® 970, vívoactive® 6, Venu® X1 support

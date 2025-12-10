@@ -28,6 +28,7 @@
             <iq:product id="d2deltapx"/>
             <iq:product id="d2deltas"/>
             <iq:product id="d2mach1"/>
+            <iq:product id="d2mach2"/>
             <iq:product id="descentg2"/>
             <iq:product id="descentmk1"/>
             <iq:product id="descentmk2"/>
@@ -63,6 +64,7 @@
             <iq:product id="fenix7xpronowifi"/>
             <iq:product id="fenix843mm"/>
             <iq:product id="fenix847mm"/>
+            <iq:product id="fenix8pro47mm"/>
             <iq:product id="fenix8solar47mm"/>
             <iq:product id="fenix8solar51mm"/>
             <iq:product id="fenixchronos"/>
@@ -115,6 +117,8 @@
             <iq:product id="venu2s"/>
             <iq:product id="venu3"/>
             <iq:product id="venu3s"/>
+            <iq:product id="venu441mm"/>
+            <iq:product id="venu445mm"/>
             <iq:product id="venud"/>
             <iq:product id="venusq"/>
             <iq:product id="venusq2"/>
