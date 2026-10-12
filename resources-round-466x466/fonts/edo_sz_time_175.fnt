@@ -1,0 +1,16 @@
+info face="Edo SZ" size=175 bold=0 italic=0 charset="" unicode=1 stretchH=100 smooth=1 aa=1 padding=0,0,0,0 spacing=1,1 outline=0
+common lineHeight=175 base=142 scaleW=256 scaleH=256 pages=2 packed=0 alphaChnl=0 redChnl=0 greenChnl=0 blueChnl=0
+page id=0 file="edo_sz_time_175_0.png"
+page id=1 file="edo_sz_time_175_1.png"
+chars count=11
+char id=48   x=79    y=0     width=78    height=107   xoffset=1     yoffset=40    xadvance=79    page=1  chnl=15
+char id=49   x=158   y=0     width=34    height=106   xoffset=2     yoffset=42    xadvance=35    page=1  chnl=15
+char id=50   x=0     y=124   width=83    height=113   xoffset=-5    yoffset=39    xadvance=75    page=0  chnl=15
+char id=51   x=162   y=118   width=79    height=108   xoffset=2     yoffset=43    xadvance=82    page=0  chnl=15
+char id=52   x=158   y=0     width=95    height=117   xoffset=0     yoffset=36    xadvance=90    page=0  chnl=15
+char id=53   x=84    y=120   width=77    height=110   xoffset=0     yoffset=40    xadvance=71    page=0  chnl=15
+char id=54   x=0     y=109   width=77    height=105   xoffset=1     yoffset=40    xadvance=79    page=1  chnl=15
+char id=55   x=0     y=0     width=76    height=123   xoffset=1     yoffset=42    xadvance=73    page=0  chnl=15
+char id=56   x=0     y=0     width=78    height=108   xoffset=-1    yoffset=40    xadvance=76    page=1  chnl=15
+char id=57   x=77    y=0     width=80    height=119   xoffset=-3    yoffset=39    xadvance=78    page=0  chnl=15
+char id=58   x=193   y=0     width=33    height=84    xoffset=5     yoffset=60    xadvance=48    page=1  chnl=15

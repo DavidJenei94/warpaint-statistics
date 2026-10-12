@@ -58,6 +58,10 @@ Motivational, Inspirational, Data, Information, Stylish, Original, Creative, Cus
 
 ## What's New
 
+### 2.0.5
+
+- Add Approach S72 43mm / 47mm, D2 Mach 2 Pro, Enduro 4, the complete fenix 9 family, Forerunner 70, Forerunner 170 and Forerunner 170 Music support.
+
 ### 2.0.4
 
 - Add D2™ Mach 2, fēnix® 8 Pro 47mm / 51mm / MicroLED, Venu® 4 41mm, Venu® 4 45mm / D2™ Air X15
@@ -111,3 +115,9 @@ This app requires access to:
 
 - GPS location
 - Your Garmin Connect™ fitness profile
+
+## Local help workbook and releases
+
+The `.xlsx` help workbook in this project is the maintained local help artifact. Derive Description from the public README sections and device support from the manifest, SDK metadata and settings/annotation overlays. Update it alongside `manifest.xml`, the release notes and device-specific resources. Shared maintenance rules are in `../AGENTS.md`; project-specific exclusions and debug checks are in `DEVICE-UPDATE.md`. Device support must match the manifest and the actual settings/annotation overlays, not just Garmin's general device compatibility.
+
+Export a signed store package with `powershell -NoProfile -File scripts/build-release.ps1`. Use Java 17+ and the active Connect IQ SDK 9.2.0 or newer. The original `../developer_key` is used; application ID and type must remain unchanged. The versioned `.iq`, build log and SHA-256 file are written to `dist`. Every firmware/regional variant and developer signature is verified before accepting an export.
